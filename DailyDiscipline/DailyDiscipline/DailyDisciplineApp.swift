@@ -17,7 +17,15 @@ struct DailyDisciplineApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ZStack {
+                ContentView()
+                
+                GeometryReader { reader in
+                    Color("NavbarTopBlue")
+                        .frame(height: reader.safeAreaInsets.top, alignment: .top)
+                        .ignoresSafeArea()
+                }
+            }
         }
     }
 }

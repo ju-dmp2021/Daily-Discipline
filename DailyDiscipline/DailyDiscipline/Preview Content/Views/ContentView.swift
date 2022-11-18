@@ -10,22 +10,55 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationStack {
-            HStack {
-                Text("Test")
-                
-                    .navigationTitle("My List")
-                    .navigationBarItems(leading: EditButton(), trailing: NavigationLink("Add", destination: ContentView()))
-                    .navigationBarTitleDisplayMode(.inline)
-                    .font(.system(size: 20))
+            ZStack(alignment: .top) {
+               
+                VStack {
+                    Navbar(leftIcon: "person.circle.fill", text: "My List", rightIcon: "gearshape.fill")
+                    Spacer()
+                    
+                }
             }
-            
         }
-        .accentColor(Color(.label))
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        /*      NavigationStack {
+         HStack(spacing: 75) {
+         NavigationLink("\(Image(systemName: "person.circle.fill"))", destination: ProfileView())
+         .tint(.black)
+         Text("My List")
+         NavigationLink("\(Image(systemName: "gearshape.fill"))", destination: ProfileView())
+         .tint(.black)
+         }
+         .frame(width: .infinity, height: 10)
+         .padding(15)
+         .font(.system(size: 32, weight: .bold))
+         .background(.blue)
+         .ignoresSafeArea()
+         Spacer()
+         }
+         */
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ZStack {
+            ContentView()
+            
+            GeometryReader { reader in
+                Color("NavbarTopBlue")
+                    .frame(height: reader.safeAreaInsets.top, alignment: .top)
+                    .ignoresSafeArea()
+            }
+        }
     }
 }
+
