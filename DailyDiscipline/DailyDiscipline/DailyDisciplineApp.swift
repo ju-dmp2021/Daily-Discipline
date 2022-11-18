@@ -8,7 +8,13 @@
 import SwiftUI
 
 @main
+
 struct DailyDisciplineApp: App {
+    
+    init() {
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor : UIColor.red]
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
