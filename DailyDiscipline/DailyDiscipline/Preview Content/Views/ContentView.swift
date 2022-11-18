@@ -8,43 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var tasks: [String] = ["Idag", "Har", "Vi"," Programmering"]
+        
     var body: some View {
         NavigationStack {
             ZStack(alignment: .top) {
-               
                 VStack {
                     Navbar(leftIcon: "person.circle.fill", text: "My List", rightIcon: "gearshape.fill")
                     Spacer()
                     
+                    List {
+                        CategoryButtonView()
+                    }
+                    
+                    Spacer()
+                    WaveBottom(isAtMyTasks: true)
                 }
             }
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        /*      NavigationStack {
-         HStack(spacing: 75) {
-         NavigationLink("\(Image(systemName: "person.circle.fill"))", destination: ProfileView())
-         .tint(.black)
-         Text("My List")
-         NavigationLink("\(Image(systemName: "gearshape.fill"))", destination: ProfileView())
-         .tint(.black)
-         }
-         .frame(width: .infinity, height: 10)
-         .padding(15)
-         .font(.system(size: 32, weight: .bold))
-         .background(.blue)
-         .ignoresSafeArea()
-         Spacer()
-         }
-         */
     }
 }
 

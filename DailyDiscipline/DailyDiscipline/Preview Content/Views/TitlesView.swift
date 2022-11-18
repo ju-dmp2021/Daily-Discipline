@@ -9,12 +9,27 @@ import SwiftUI
 
 struct TitlesView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            ZStack(alignment: .top) {
+                VStack {
+                    Navbar(leftIcon: "arrow.backward", text: "Titles", rightIcon: "gearshape.fill")
+                    Spacer()
+                    WaveBottom(isAtMyTasks: false)
+                }
+            }
+        }
     }
 }
 
 struct TitlesView_Previews: PreviewProvider {
     static var previews: some View {
-        TitlesView()
+        ZStack {
+            TitlesView()
+            GeometryReader { reader in
+                Color("NavbarTopBlue")
+                    .frame(height: reader.safeAreaInsets.top, alignment: .top)
+                    .ignoresSafeArea()
+            }
+        }
     }
 }

@@ -9,12 +9,27 @@ import SwiftUI
 
 struct AchievementsView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            ZStack(alignment: .top) {
+                VStack {
+                    Navbar(leftIcon: "arrow.backward", text: "Achievements", rightIcon: "gearshape.fill")
+                    Spacer()
+                    WaveBottom(isAtMyTasks: false)
+                }
+            }
+        }
     }
 }
 
 struct AchievementsView_Previews: PreviewProvider {
     static var previews: some View {
-        AchievementsView()
+        ZStack {
+            AchievementsView()
+            GeometryReader { reader in
+                Color("NavbarTopBlue")
+                    .frame(height: reader.safeAreaInsets.top, alignment: .top)
+                    .ignoresSafeArea()
+            }
+        }
     }
 }
