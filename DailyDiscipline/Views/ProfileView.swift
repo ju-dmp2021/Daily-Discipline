@@ -1,0 +1,76 @@
+//
+//  ProfileView.swift
+//  DailyDiscipline
+//
+//  Created by Ludvig Krantzén on 2022-11-18.
+//
+
+import SwiftUI
+
+struct ProfileView: View {
+    
+
+    
+    var body: some View {
+        NavigationStack {
+            ZStack(alignment: .top) {
+                VStack {
+                    Navbar(leftIcon: "chevron.left", text: "Profile", rightIcon: "gearshape.fill")
+                    Spacer()
+                    
+                    VStack {
+                        Spacer()
+                        Image(systemName: "person.crop.circle.fill")
+                            .font(.system(size: 180))
+                            .foregroundColor(Color("NavbarBlue"))
+                        Text("Username")
+                            .underline()
+                        Spacer()
+                        Text("Level: 0")
+                        RoundedRectangle(cornerRadius: 25)
+                            .fill(.white)
+                            .frame(width: 200, height: 20)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 25)
+                                    .stroke(.black, lineWidth: 2)
+                            )
+                        HStack {
+                            Spacer()
+                            VStack {
+                                Image(systemName: "trophy.circle.fill")
+                                    .font(.system(size: 80))
+                                    .foregroundColor(Color("NavbarBlue"))
+                                Text("Achievements")
+                            }
+                            Spacer()
+                            VStack {
+                                Image(systemName: "pencil.circle.fill")
+                                    .font(.system(size: 80))
+                                    .foregroundColor(Color("NavbarBlue"))
+                                Text("Titles")
+                            }
+                            Spacer()
+                        }
+                    }
+                    Spacer()
+                    WaveBottom(isAtMyTasks: false)
+                }
+            }
+        }
+    }
+}
+
+struct ProfileView_Previews: PreviewProvider {
+    static var previews: some View {
+        ZStack {
+            ProfileView()
+            GeometryReader { reader in
+                Color("NavbarTopBlue")
+                    .frame(height: reader.safeAreaInsets.top, alignment: .top)
+                    .ignoresSafeArea()
+            }
+        }
+    }
+}
+
+

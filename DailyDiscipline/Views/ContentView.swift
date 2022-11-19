@@ -24,8 +24,10 @@ struct ContentView: View {
                     
                     Spacer()
                     WaveBottom(isAtMyTasks: true)
+                        .background(.red) // Need to make it transparant
                 }
             }
+            
         }
     }
 }

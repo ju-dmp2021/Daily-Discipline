@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C81DC56C292908DF00784D76 /* AchievementAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81DC56B292908DF00784D76 /* AchievementAmount.swift */; };
+		C81DC56E29290E4600784D76 /* TitleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81DC56D29290E4600784D76 /* TitleLayout.swift */; };
+		C81DC570292914A900784D76 /* GetRandomTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81DC56F292914A900784D76 /* GetRandomTask.swift */; };
+		C81DC5722929182200784D76 /* FrequencyCategoryButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81DC5712929182200784D76 /* FrequencyCategoryButtons.swift */; };
 		C8A1DDDF2927838B00FA983B /* DailyDisciplineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A1DDDE2927838B00FA983B /* DailyDisciplineApp.swift */; };
 		C8A1DDE12927838B00FA983B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A1DDE02927838B00FA983B /* ContentView.swift */; };
 		C8A1DDE32927838C00FA983B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8A1DDE22927838C00FA983B /* Assets.xcassets */; };
@@ -23,6 +27,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C81DC56B292908DF00784D76 /* AchievementAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementAmount.swift; sourceTree = "<group>"; };
+		C81DC56D29290E4600784D76 /* TitleLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLayout.swift; sourceTree = "<group>"; };
+		C81DC56F292914A900784D76 /* GetRandomTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRandomTask.swift; sourceTree = "<group>"; };
+		C81DC5712929182200784D76 /* FrequencyCategoryButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrequencyCategoryButtons.swift; sourceTree = "<group>"; };
 		C8A1DDDB2927838B00FA983B /* DailyDiscipline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyDiscipline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8A1DDDE2927838B00FA983B /* DailyDisciplineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDisciplineApp.swift; sourceTree = "<group>"; };
 		C8A1DDE02927838B00FA983B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -53,8 +61,11 @@
 		C8A1DDD22927838B00FA983B = {
 			isa = PBXGroup;
 			children = (
+				C81DC5712929182200784D76 /* FrequencyCategoryButtons.swift */,
+				C81DC56F292914A900784D76 /* GetRandomTask.swift */,
 				C8D919FD2927D58300955313 /* CategoryButtonView.swift */,
 				C8D919FB2927CDC500955313 /* DisplayTasks.swift */,
+				C8A1DDED292785E400FA983B /* Views */,
 				C8A1DDDD2927838B00FA983B /* DailyDiscipline */,
 				C8A1DDDC2927838B00FA983B /* Products */,
 			);
@@ -82,7 +93,6 @@
 			isa = PBXGroup;
 			children = (
 				C8A1DDE52927838C00FA983B /* Preview Assets.xcassets */,
-				C8A1DDED292785E400FA983B /* Views */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -106,6 +116,8 @@
 			children = (
 				C8D919F72927A86300955313 /* Navbar.swift */,
 				C8D919F92927BC9400955313 /* WaveBottom.swift */,
+				C81DC56B292908DF00784D76 /* AchievementAmount.swift */,
+				C81DC56D29290E4600784D76 /* TitleLayout.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -180,13 +192,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C81DC56E29290E4600784D76 /* TitleLayout.swift in Sources */,
 				C8D919F529278E7700955313 /* SettingsView.swift in Sources */,
 				C8D919F82927A86300955313 /* Navbar.swift in Sources */,
 				C8A1DDF12927862200FA983B /* AchievementsView.swift in Sources */,
 				C8D919FC2927CDC500955313 /* DisplayTasks.swift in Sources */,
 				C8D919FA2927BC9400955313 /* WaveBottom.swift in Sources */,
+				C81DC5722929182200784D76 /* FrequencyCategoryButtons.swift in Sources */,
 				C8A1DDE12927838B00FA983B /* ContentView.swift in Sources */,
 				C8A1DDF52927864500FA983B /* NewTaskView.swift in Sources */,
+				C81DC570292914A900784D76 /* GetRandomTask.swift in Sources */,
+				C81DC56C292908DF00784D76 /* AchievementAmount.swift in Sources */,
 				C8A1DDEF2927860700FA983B /* ProfileView.swift in Sources */,
 				C8D919FE2927D58300955313 /* CategoryButtonView.swift in Sources */,
 				C8A1DDF32927863400FA983B /* TitlesView.swift in Sources */,

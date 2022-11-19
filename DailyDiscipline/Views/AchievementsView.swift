@@ -1,5 +1,5 @@
 //
-//  TitlesView.swift
+//  AchievementsView.swift
 //  DailyDiscipline
 //
 //  Created by Ludvig Krantzén on 2022-11-18.
@@ -7,12 +7,24 @@
 
 import SwiftUI
 
-struct TitlesView: View {
+struct AchievementsView: View {
     var body: some View {
         NavigationStack {
             ZStack(alignment: .top) {
                 VStack {
-                    Navbar(leftIcon: "arrow.backward", text: "Titles", rightIcon: "gearshape.fill")
+                    Navbar(leftIcon: "arrow.backward", text: "Achievements", rightIcon: "gearshape.fill")
+                    Spacer()
+                    
+                    AchievementAmount()
+                    Spacer()
+
+                    Button {
+                        
+                    } label: {
+                        Text("See locked achievements...")
+                    }
+
+                    
                     Spacer()
                     WaveBottom(isAtMyTasks: false)
                 }
@@ -21,10 +33,10 @@ struct TitlesView: View {
     }
 }
 
-struct TitlesView_Previews: PreviewProvider {
+struct AchievementsView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            TitlesView()
+            AchievementsView()
             GeometryReader { reader in
                 Color("NavbarTopBlue")
                     .frame(height: reader.safeAreaInsets.top, alignment: .top)

@@ -17,8 +17,19 @@ struct Navbar: View {
     var body: some View {
         HStack {
 
-            NavigationLink("\(Image(systemName: "\(leftIcon)"))", destination: ContentView())
-                .font(.system(size: 35))
+       //     NavigationLink("\(Image(systemName: "\(leftIcon)"))", destination: ContentView())
+        //        .font(.system(size: 35))
+            
+     /*       Button {
+                
+            } label: {
+                Image(systemName: "\(leftIcon)")
+                    .font(.system(size: 35))
+            }
+*/
+            
+            
+            
             
             Spacer()
             Text("\(text)")
