@@ -6,20 +6,52 @@
 //
 
 import SwiftUI
+import Combine
+
+class TEST: ObservableObject {
+    @Published var daily: [TaskObject] = [TaskObject(mainTask: Task(task: "AA", isComplete: false), subTask: [Task(task: "SS", isComplete: false)])]
+    
+    
+    func addTask(object: TaskObject) {
+        daily.append(object)
+    }
+    
+    func getTask(object: TaskObject) {
+        // Get task??
+    }
+}
+
+struct Task {
+    var task: String
+    var isComplete: Bool = false
+  //  var isPreset: Bool = false
+    
+    init(task: String, isComplete: Bool) {
+        self.task = task
+        self.isComplete = isComplete
+    }
+}
+
+struct TaskObject: Identifiable {
+    let id = UUID()
+    var mainTask: Task
+    var subTask: [Task]
+}
 
 struct NewTaskView: View {
     
     @State private var textInput: String = ""
     @Environment(\.presentationMode) var presentationMode
+    @State private var selectedPriority: Frequency = .weekly
     
+    // Testing Publisher
+    @StateObject var stuff = TEST()
+
     var body: some View {
         NavigationStack {
             ZStack(alignment: .top) {
                 VStack {
-               //     Navbar(leftIcon: "chevron.left", text: "Add new task!", rightIcon: "gearshape.fill")
-                    
-                    
-                    // Testing this solution instead of code above. Starts here
+
                     HStack {
                         backButton
                             .padding()
@@ -33,10 +65,14 @@ struct NewTaskView: View {
                     .foregroundColor(.white)
                     .frame(height: 80)
                     .background(Color("NavbarBlue"))
-                    // ends here
-                    
                     
                     Spacer()
+                    
+                    // Testing Publisher
+                    ForEach(stuff.daily) { item in
+                        Text("\(item.mainTask.task)")
+                    }
+                    //
                     
                     VStack (alignment: .leading){
                         Text("Task")
@@ -49,7 +85,7 @@ struct NewTaskView: View {
                         HStack {
                             
                             Button {
-                                
+                                stuff.addTask(object: TaskObject(mainTask: Task(task: "YEYE", isComplete: false), subTask: [Task(task: "PFF", isComplete: false)]))
                             } label: {
                                 Image(systemName: "plus.circle")
                                     .tint(.black)
@@ -64,21 +100,8 @@ struct NewTaskView: View {
                             Text("How frequently?")
                             Spacer()
                         }
-                        FrequencyCategoryButtons()
-                        HStack {
-                            Spacer()
-                            Button {
-                                
-                            } label: {
-                                Text("Add task!")
-                                    .frame(width: 304)
-                                    .padding(12)
-                                    .background(Color("NavbarBlue"))
-                                    .cornerRadius(10)
-                                    .foregroundColor(.white)
-                            }
-                            Spacer()
-                        }
+                        PickerFrequency(selectedFrequency: $selectedPriority)
+                        addButton
 
                     }
                     .padding()
@@ -93,6 +116,7 @@ struct NewTaskView: View {
 }
 
 struct NewTaskView_Previews: PreviewProvider {
+
     static var previews: some View {
         ZStack {
             NewTaskView()
@@ -120,5 +144,17 @@ extension NewTaskView {
         } label: {
             Image(systemName: "gearshape.fill")
         }
+    }
+    private var addButton: some View {
+            Button {
+                presentationMode.wrappedValue.dismiss()
+            } label: {
+                Text("Add task!")
+                    .frame(maxWidth: .infinity)
+                    .padding(12)
+                    .background(Color("NavbarBlue"))
+                    .cornerRadius(10)
+                    .foregroundColor(.white)
+            }
     }
 }

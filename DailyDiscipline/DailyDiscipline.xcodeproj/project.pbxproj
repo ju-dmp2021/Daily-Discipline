@@ -19,6 +19,7 @@
 		C8A1DDF12927862200FA983B /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A1DDF02927862200FA983B /* AchievementsView.swift */; };
 		C8A1DDF32927863400FA983B /* TitlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A1DDF22927863400FA983B /* TitlesView.swift */; };
 		C8A1DDF52927864500FA983B /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A1DDF42927864500FA983B /* NewTaskView.swift */; };
+		C8A2F4AF292BC55400CF459D /* PickerFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A2F4AE292BC55400CF459D /* PickerFrequency.swift */; };
 		C8D919F529278E7700955313 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D919F429278E7700955313 /* SettingsView.swift */; };
 		C8D919F82927A86300955313 /* Navbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D919F72927A86300955313 /* Navbar.swift */; };
 		C8D919FA2927BC9400955313 /* WaveBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8D919F92927BC9400955313 /* WaveBottom.swift */; };
@@ -40,6 +41,7 @@
 		C8A1DDF02927862200FA983B /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
 		C8A1DDF22927863400FA983B /* TitlesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlesView.swift; sourceTree = "<group>"; };
 		C8A1DDF42927864500FA983B /* NewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
+		C8A2F4AE292BC55400CF459D /* PickerFrequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerFrequency.swift; sourceTree = "<group>"; };
 		C8D919F429278E7700955313 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		C8D919F72927A86300955313 /* Navbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navbar.swift; sourceTree = "<group>"; };
 		C8D919F92927BC9400955313 /* WaveBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveBottom.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 		C8A1DDD22927838B00FA983B = {
 			isa = PBXGroup;
 			children = (
+				C8A2F4AE292BC55400CF459D /* PickerFrequency.swift */,
 				C81DC5712929182200784D76 /* FrequencyCategoryButtons.swift */,
 				C81DC56F292914A900784D76 /* GetRandomTask.swift */,
 				C8D919FD2927D58300955313 /* CategoryButtonView.swift */,
@@ -192,6 +195,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8A2F4AF292BC55400CF459D /* PickerFrequency.swift in Sources */,
 				C81DC56E29290E4600784D76 /* TitleLayout.swift in Sources */,
 				C8D919F529278E7700955313 /* SettingsView.swift in Sources */,
 				C8D919F82927A86300955313 /* Navbar.swift in Sources */,

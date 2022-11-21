@@ -9,6 +9,7 @@ import SwiftUI
 
 struct WaveBottom: View {
     
+    
     var isAtMyTasks: Bool
     
     var body: some View {
@@ -36,6 +37,7 @@ struct WaveBottom: View {
 }
 
 struct WaveBottom_Previews: PreviewProvider {
+
     static var previews: some View {
         WaveBottom(isAtMyTasks: true)
     }
