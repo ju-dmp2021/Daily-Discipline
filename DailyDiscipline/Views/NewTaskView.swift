@@ -22,11 +22,13 @@ struct NewTaskView: View {
                     // Testing this solution instead of code above. Starts here
                     HStack {
                         backButton
+                            .padding()
                         Spacer()
-                        Text("Profile")
+                        Text("Add new task!")
                             .font(.title)
                         Spacer()
-                        backButton
+                        settingButton
+                            .padding()
                     }
                     .foregroundColor(.white)
                     .frame(height: 80)
@@ -85,6 +87,7 @@ struct NewTaskView: View {
                     WaveBottom(isAtMyTasks: false)
                 }
             }
+            .navigationBarBackButtonHidden(true)
         }
     }
 }
@@ -109,6 +112,13 @@ extension NewTaskView {
         } label: {
             Image(systemName: "chevron.left")
         }
-
+    }
+    
+    private var settingButton: some View {
+        Button {
+            
+        } label: {
+            Image(systemName: "gearshape.fill")
+        }
     }
 }

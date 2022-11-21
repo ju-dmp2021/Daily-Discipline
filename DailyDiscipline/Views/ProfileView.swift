@@ -15,7 +15,7 @@ struct ProfileView: View {
         NavigationStack {
             ZStack(alignment: .top) {
                 VStack {
-                    Navbar(leftIcon: "chevron.left", text: "Profile", rightIcon: "gearshape.fill")
+                    Navbar(leftIcon: "backButton", text: "Profile")
                     Spacer()
                     
                     VStack {
@@ -36,19 +36,9 @@ struct ProfileView: View {
                             )
                         HStack {
                             Spacer()
-                            VStack {
-                                Image(systemName: "trophy.circle.fill")
-                                    .font(.system(size: 80))
-                                    .foregroundColor(Color("NavbarBlue"))
-                                Text("Achievements")
-                            }
+                            achievementButton
                             Spacer()
-                            VStack {
-                                Image(systemName: "pencil.circle.fill")
-                                    .font(.system(size: 80))
-                                    .foregroundColor(Color("NavbarBlue"))
-                                Text("Titles")
-                            }
+                            titlesButton
                             Spacer()
                         }
                     }
@@ -56,6 +46,7 @@ struct ProfileView: View {
                     WaveBottom(isAtMyTasks: false)
                 }
             }
+            .navigationBarBackButtonHidden(true)
         }
     }
 }
@@ -73,4 +64,31 @@ struct ProfileView_Previews: PreviewProvider {
     }
 }
 
-
+extension ProfileView {
+    private var achievementButton: some View {
+        NavigationLink {
+            AchievementsView()
+        } label: {
+            VStack {
+                Image(systemName: "trophy.circle.fill")
+                    .font(.system(size: 80))
+                    .foregroundColor(Color("NavbarBlue"))
+                Text("Acievements")
+                    .foregroundColor(.black)
+            }
+        }
+    }
+    private var titlesButton: some View {
+        NavigationLink {
+            TitlesView()
+        } label: {
+            VStack {
+                Image(systemName: "pencil.circle.fill")
+                    .font(.system(size: 80))
+                    .foregroundColor(Color("NavbarBlue"))
+                Text("Titles")
+                    .foregroundColor(.black)
+            }
+        }
+    }
+}

@@ -12,7 +12,7 @@ struct TitlesView: View {
         NavigationStack {
             ZStack(alignment: .top) {
                 VStack {
-                    Navbar(leftIcon: "arrow.backward", text: "Titles", rightIcon: "gearshape.fill")
+                    Navbar(leftIcon: "backButton", text: "Titles")
                     Spacer()
                     
                     TitleLayout()
@@ -28,6 +28,7 @@ struct TitlesView: View {
                     WaveBottom(isAtMyTasks: false)
                 }
             }
+            .navigationBarBackButtonHidden(true)
         }
     }
 }

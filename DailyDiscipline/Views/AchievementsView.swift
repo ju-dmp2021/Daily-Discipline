@@ -12,7 +12,7 @@ struct AchievementsView: View {
         NavigationStack {
             ZStack(alignment: .top) {
                 VStack {
-                    Navbar(leftIcon: "arrow.backward", text: "Achievements", rightIcon: "gearshape.fill")
+                    Navbar(leftIcon: "backButton", text: "Achievements")
                     Spacer()
                     
                     AchievementAmount()
@@ -29,6 +29,7 @@ struct AchievementsView: View {
                     WaveBottom(isAtMyTasks: false)
                 }
             }
+            .navigationBarBackButtonHidden(true)
         }
     }
 }

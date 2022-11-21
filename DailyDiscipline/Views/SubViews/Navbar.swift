@@ -9,38 +9,60 @@ import SwiftUI
 
 struct Navbar: View {
     
+    @Environment(\.presentationMode) var presentationMode
+    
     var leftIcon: String
     var text: String
-    var rightIcon: String
-    
     
     var body: some View {
         HStack {
 
-       //     NavigationLink("\(Image(systemName: "\(leftIcon)"))", destination: ContentView())
-        //        .font(.system(size: 35))
-            
-     /*       Button {
-                
-            } label: {
-                Image(systemName: "\(leftIcon)")
-                    .font(.system(size: 35))
+            if leftIcon == "backButton" {
+                backButton
+                    .padding()
+            } else {
+                profileButton
+                    .padding()
             }
-*/
-            
-            
-            
-            
             Spacer()
+            
             Text("\(text)")
-                .font(.system(size: 35))
+                .font(.title)
+            
             Spacer()
-            NavigationLink("\(Image(systemName: "\(rightIcon)"))", destination: ContentView())
-                .font(.system(size: 35))
+            
+            settingButton
+                .padding()
         }
         .padding(.vertical, 16)
         .padding(.horizontal, 8)
         .background(Color("NavbarBlue"))
         .foregroundColor(.white)
+    }
+}
+
+extension Navbar {
+    private var backButton: some View {
+        Button {
+            presentationMode.wrappedValue.dismiss()
+        } label: {
+            Image(systemName: "chevron.left")
+        }
+    }
+    
+    private var settingButton: some View {
+        Button {
+            
+        } label: {
+            Image(systemName: "gearshape.fill")
+        }
+    }
+    
+    private var profileButton: some View {
+        NavigationLink {
+            ProfileView()
+        } label: {
+            Image(systemName: "person.crop.circle.fill")
+        }
     }
 }

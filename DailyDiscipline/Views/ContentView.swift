@@ -15,7 +15,7 @@ struct ContentView: View {
         NavigationStack {
             ZStack(alignment: .top) {
                 VStack {
-                    Navbar(leftIcon: "person.circle.fill", text: "My List", rightIcon: "gearshape.fill")
+                    Navbar(leftIcon: "profileButton", text: "My List")
                     Spacer()
                     
                     List {
