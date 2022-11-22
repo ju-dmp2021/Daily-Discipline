@@ -11,6 +11,9 @@ import SwiftUI
 
 struct DailyDisciplineApp: App {
     
+    @StateObject var singleTaskListViewModel: SingleTaskListViewModel = SingleTaskListViewModel()
+    @StateObject var multipleTaskListViewModel: MultipleTaskListViewModel = MultipleTaskListViewModel()
+    
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor : UIColor.red]
     }
@@ -19,6 +22,8 @@ struct DailyDisciplineApp: App {
         WindowGroup {
             ZStack {
                 ContentView()
+                    .environmentObject(singleTaskListViewModel)
+                    .environmentObject(multipleTaskListViewModel)
                 
                 GeometryReader { reader in
                     Color("NavbarTopBlue")

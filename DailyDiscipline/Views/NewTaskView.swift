@@ -11,6 +11,7 @@ struct NewTaskView: View {
     
     @State private var textInput: String = ""
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var singleTaskListViewModel: SingleTaskListViewModel
     
     var body: some View {
         NavigationStack {
@@ -66,7 +67,8 @@ struct NewTaskView: View {
                         HStack {
                             Spacer()
                             Button {
-                                
+                                singleTaskListViewModel.addSingleTask(title: textInput)
+                                presentationMode.wrappedValue.dismiss()
                             } label: {
                                 Text("Add task!")
                                     .frame(width: 304)
