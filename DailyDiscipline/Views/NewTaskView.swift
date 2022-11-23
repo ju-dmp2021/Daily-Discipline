@@ -9,9 +9,16 @@ import SwiftUI
 
 struct NewTaskView: View {
     
-    @State private var textInput: String = ""
+    @State var textInput: String = ""
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var singleTaskListViewModel: SingleTaskListViewModel
+    @State var selectedPriority: Frequency = .weekly
+    
+    @State var hasPressedAddSubTask: Bool = false
+    @State var subTaskInput: [String] = [""]
+    @State var tempText: String = ""
+    
+
     
     var body: some View {
         NavigationStack {
@@ -45,25 +52,39 @@ struct NewTaskView: View {
                           text: $textInput
                         )
                         .underline()
-                        HStack {
-                            
-                            Button {
-                                
-                            } label: {
-                                Image(systemName: "plus.circle")
-                                    .tint(.black)
-                            }
-                            Text("Add subtask...")
-                                .opacity(0.2)
-                        }
                         
+                        if textInput.count != 0{
+                            if hasPressedAddSubTask{
+                                ForEach($subTaskInput, id:\.self) { taskInput in
+                                    
+                                    HStack {
+                                        
+                                        TextField("Add subtask...", text: taskInput)
+                                    }
+                                }
+                            }
+                            Button{
+                                if hasPressedAddSubTask{
+                                    subTaskInput.insert(tempText, at: subTaskInput.endIndex-1)
+                                }
+                                else{
+                                    hasPressedAddSubTask = true
+                                }
+                            } label: {
+                                HStack{
+                                    Image(systemName: "plus.circle")
+                                    Text("add subtask...")
+                                }
+                            }
+                        }
+                            
                         GetRandomTask()
                         HStack {
                             Spacer()
                             Text("How frequently?")
                             Spacer()
                         }
-                        FrequencyCategoryButtons()
+                        PickerFrequency(selectedFrequency: $selectedPriority)
                         HStack {
                             Spacer()
                             Button {

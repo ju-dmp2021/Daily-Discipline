@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11A2062F292E1E8400611E8D /* PickerFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A2062E292E1E8400611E8D /* PickerFrequency.swift */; };
 		11EF87C0292CCFB000021384 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF87BF292CCFB000021384 /* TaskModel.swift */; };
 		11EF87C2292CD2C900021384 /* SingleTaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF87C1292CD2C900021384 /* SingleTaskRowView.swift */; };
 		11EF87C4292CD37200021384 /* MultipleTaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF87C3292CD37200021384 /* MultipleTaskRowView.swift */; };
@@ -32,6 +33,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11A2062E292E1E8400611E8D /* PickerFrequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerFrequency.swift; sourceTree = "<group>"; };
 		11EF87BF292CCFB000021384 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		11EF87C1292CD2C900021384 /* SingleTaskRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTaskRowView.swift; sourceTree = "<group>"; };
 		11EF87C3292CD37200021384 /* MultipleTaskRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleTaskRowView.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		C8A1DDD22927838B00FA983B = {
 			isa = PBXGroup;
 			children = (
+				11A2062E292E1E8400611E8D /* PickerFrequency.swift */,
 				C81DC5712929182200784D76 /* FrequencyCategoryButtons.swift */,
 				C81DC56F292914A900784D76 /* GetRandomTask.swift */,
 				C8D919FB2927CDC500955313 /* DisplayTasks.swift */,
@@ -231,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11A2062F292E1E8400611E8D /* PickerFrequency.swift in Sources */,
 				C81DC56E29290E4600784D76 /* TitleLayout.swift in Sources */,
 				C8D919F529278E7700955313 /* SettingsView.swift in Sources */,
 				C8D919F82927A86300955313 /* Navbar.swift in Sources */,

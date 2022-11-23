@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     
-    //@State var tasks: [String] = ["Idag", "Har", "Vi"," Programmering"]
+    
     @EnvironmentObject var singleTaskListViewModel: SingleTaskListViewModel
     @EnvironmentObject var multipleTaskListViewModel: MultipleTaskListViewModel
 
-    
+    @State var selectedPriority: Frequency = .weekly
     
     var body: some View {
         
@@ -21,13 +21,14 @@ struct ContentView: View {
             ZStack(alignment: .top) {
                 VStack {
                     Navbar(leftIcon: "person.circle.fill", text: "My List", rightIcon: "gearshape.fill")
+                    PickerFrequency(selectedFrequency: $selectedPriority)
                     Spacer()
                     
                     
                     
                     List {
                         
-                        //CategoryButtonView()
+                        
                         ForEach(singleTaskListViewModel.singleTasks) { task in
                             SingleTaskRowView(singleTask: task)
                                 .onTapGesture { singleTaskListViewModel.updateSingleTask(task: task) }
@@ -58,16 +59,11 @@ struct ContentView: View {
                                         
                                 }
                             }
-                            
-                            
-                            
-                            
-                            Spacer()
-                            WaveBottom(isAtMyTasks: true)
-                                .background(.red) // Need to make it transparant
                         }
                     }
-                    
+                    Spacer()
+                    WaveBottom(isAtMyTasks: true)
+                        .background() // Need to make it transparant
                 }
             }
         }
