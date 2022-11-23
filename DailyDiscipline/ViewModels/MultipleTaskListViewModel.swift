@@ -29,6 +29,16 @@ class MultipleTaskListViewModel: ObservableObject{
     }
     
     
+    func addMultipleTask(title:String, subTasks: [String]){
+        
+        var newSubTasks: [SingleTaskModel] = []
+        for task in subTasks{
+            newSubTasks.append(SingleTaskModel(title: task, isCompleted: false))
+        }
+        let newMultipleTask = MultipleTaskModel(title: title, isCompleted: false, isShown: false, subTasks: newSubTasks)
+        multipleTasks.append(newMultipleTask)
+    }
+    
     
     func updateSubTask(task: MultipleTaskModel, subTask: SingleTaskModel) {
         if let index = multipleTasks.firstIndex(where: {$0.id == task.id}){

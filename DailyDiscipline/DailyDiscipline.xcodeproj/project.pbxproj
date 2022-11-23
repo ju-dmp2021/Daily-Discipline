@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		114A6014292E5F5F007D10B4 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 114A6012292E5F5F007D10B4 /* Data.xcdatamodeld */; };
 		11A2062F292E1E8400611E8D /* PickerFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A2062E292E1E8400611E8D /* PickerFrequency.swift */; };
 		11EF87C0292CCFB000021384 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF87BF292CCFB000021384 /* TaskModel.swift */; };
 		11EF87C2292CD2C900021384 /* SingleTaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF87C1292CD2C900021384 /* SingleTaskRowView.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		114A6013292E5F5F007D10B4 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
 		11A2062E292E1E8400611E8D /* PickerFrequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerFrequency.swift; sourceTree = "<group>"; };
 		11EF87BF292CCFB000021384 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		11EF87C1292CD2C900021384 /* SingleTaskRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTaskRowView.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		C8A1DDD22927838B00FA983B = {
 			isa = PBXGroup;
 			children = (
+				114A6012292E5F5F007D10B4 /* Data.xcdatamodeld */,
 				11A2062E292E1E8400611E8D /* PickerFrequency.swift */,
 				C81DC5712929182200784D76 /* FrequencyCategoryButtons.swift */,
 				C81DC56F292914A900784D76 /* GetRandomTask.swift */,
@@ -251,6 +254,7 @@
 				11EF87C8292CD3BD00021384 /* SingleTaskListViewModel.swift in Sources */,
 				C8A1DDF32927863400FA983B /* TitlesView.swift in Sources */,
 				11EF87C2292CD2C900021384 /* SingleTaskRowView.swift in Sources */,
+				114A6014292E5F5F007D10B4 /* Data.xcdatamodeld in Sources */,
 				11EF87C0292CCFB000021384 /* TaskModel.swift in Sources */,
 				11EF87CC292CFA7F00021384 /* MultipleTaskListViewModel.swift in Sources */,
 				C8A1DDDF2927838B00FA983B /* DailyDisciplineApp.swift in Sources */,
@@ -453,6 +457,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		114A6012292E5F5F007D10B4 /* Data.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				114A6013292E5F5F007D10B4 /* Data.xcdatamodel */,
+			);
+			currentVersion = 114A6013292E5F5F007D10B4 /* Data.xcdatamodel */;
+			path = Data.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C8A1DDD32927838B00FA983B /* Project object */;
 }

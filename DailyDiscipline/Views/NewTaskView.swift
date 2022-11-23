@@ -12,10 +12,11 @@ struct NewTaskView: View {
     @State var textInput: String = ""
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var singleTaskListViewModel: SingleTaskListViewModel
+    @EnvironmentObject var multipleTaskListViewModel: MultipleTaskListViewModel
     @State var selectedPriority: Frequency = .weekly
     
     @State var hasPressedAddSubTask: Bool = false
-    @State var subTaskInput: [String] = [""]
+    @State var subTaskInput: [String] = []
     @State var tempText: String = ""
     
 
@@ -54,19 +55,29 @@ struct NewTaskView: View {
                         .underline()
                         
                         if textInput.count != 0{
+                            
+                            
                             if hasPressedAddSubTask{
+                                
+                                
+                                
                                 ForEach($subTaskInput, id:\.self) { taskInput in
                                     
                                     HStack {
-                                        
-                                        TextField("Add subtask...", text: taskInput)
+                                        Text(taskInput.wrappedValue)
                                     }
                                 }
+                                TextField("Add Subtask...", text: $tempText)
                             }
+                            
+                            
+                            
                             Button{
-                                if hasPressedAddSubTask{
-                                    subTaskInput.insert(tempText, at: subTaskInput.endIndex-1)
+                                if hasPressedAddSubTask && tempText.count != 0 {
+                                    subTaskInput.append(tempText)
+                                    
                                 }
+                                    
                                 else{
                                     hasPressedAddSubTask = true
                                 }
@@ -76,6 +87,7 @@ struct NewTaskView: View {
                                     Text("add subtask...")
                                 }
                             }
+                            .onChange(of: subTaskInput) {newValue in tempText = ""}
                         }
                             
                         GetRandomTask()
@@ -88,7 +100,12 @@ struct NewTaskView: View {
                         HStack {
                             Spacer()
                             Button {
-                                singleTaskListViewModel.addSingleTask(title: textInput)
+                                if subTaskInput.isEmpty{
+                                    singleTaskListViewModel.addSingleTask(title: textInput)
+                                }
+                                else {
+                                    multipleTaskListViewModel.addMultipleTask(title: textInput, subTasks: subTaskInput)
+                                }
                                 presentationMode.wrappedValue.dismiss()
                             } label: {
                                 Text("Add task!")
