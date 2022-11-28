@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		114A6014292E5F5F007D10B4 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 114A6012292E5F5F007D10B4 /* Data.xcdatamodeld */; };
 		11A2062F292E1E8400611E8D /* PickerFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A2062E292E1E8400611E8D /* PickerFrequency.swift */; };
+		11C09B1E2934EDB9003BD5D2 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C09B1D2934EDB9003BD5D2 /* DataModel.swift */; };
+		11C09B202934EDE1003BD5D2 /* TaskData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C09B1F2934EDE1003BD5D2 /* TaskData.swift */; };
 		11EF87C0292CCFB000021384 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF87BF292CCFB000021384 /* TaskModel.swift */; };
 		11EF87C2292CD2C900021384 /* SingleTaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF87C1292CD2C900021384 /* SingleTaskRowView.swift */; };
 		11EF87C4292CD37200021384 /* MultipleTaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF87C3292CD37200021384 /* MultipleTaskRowView.swift */; };
@@ -36,6 +38,8 @@
 /* Begin PBXFileReference section */
 		114A6013292E5F5F007D10B4 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
 		11A2062E292E1E8400611E8D /* PickerFrequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerFrequency.swift; sourceTree = "<group>"; };
+		11C09B1D2934EDB9003BD5D2 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		11C09B1F2934EDE1003BD5D2 /* TaskData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskData.swift; sourceTree = "<group>"; };
 		11EF87BF292CCFB000021384 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		11EF87C1292CD2C900021384 /* SingleTaskRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTaskRowView.swift; sourceTree = "<group>"; };
 		11EF87C3292CD37200021384 /* MultipleTaskRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleTaskRowView.swift; sourceTree = "<group>"; };
@@ -72,6 +76,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11C09B1C2934EDA9003BD5D2 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				11C09B1D2934EDB9003BD5D2 /* DataModel.swift */,
+				11C09B1F2934EDE1003BD5D2 /* TaskData.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		11EF87BD292CCF7400021384 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +114,7 @@
 		C8A1DDD22927838B00FA983B = {
 			isa = PBXGroup;
 			children = (
+				11C09B1C2934EDA9003BD5D2 /* API */,
 				114A6012292E5F5F007D10B4 /* Data.xcdatamodeld */,
 				11A2062E292E1E8400611E8D /* PickerFrequency.swift */,
 				C81DC5712929182200784D76 /* FrequencyCategoryButtons.swift */,
@@ -251,6 +265,7 @@
 				C81DC56C292908DF00784D76 /* AchievementAmount.swift in Sources */,
 				C8A1DDEF2927860700FA983B /* ProfileView.swift in Sources */,
 				C8D919FE2927D58300955313 /* CategoryButtonView.swift in Sources */,
+				11C09B202934EDE1003BD5D2 /* TaskData.swift in Sources */,
 				11EF87C8292CD3BD00021384 /* SingleTaskListViewModel.swift in Sources */,
 				C8A1DDF32927863400FA983B /* TitlesView.swift in Sources */,
 				11EF87C2292CD2C900021384 /* SingleTaskRowView.swift in Sources */,
@@ -259,6 +274,7 @@
 				11EF87CC292CFA7F00021384 /* MultipleTaskListViewModel.swift in Sources */,
 				C8A1DDDF2927838B00FA983B /* DailyDisciplineApp.swift in Sources */,
 				11EF87C4292CD37200021384 /* MultipleTaskRowView.swift in Sources */,
+				11C09B1E2934EDB9003BD5D2 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

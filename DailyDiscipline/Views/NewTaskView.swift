@@ -18,8 +18,8 @@ struct NewTaskView: View {
     @State var hasPressedAddSubTask: Bool = false
     @State var subTaskInput: [String] = []
     @State var tempText: String = ""
+    @StateObject private var dataModel = DataModel()
     
-
     
     var body: some View {
         NavigationStack {
@@ -90,7 +90,20 @@ struct NewTaskView: View {
                             .onChange(of: subTaskInput) {newValue in tempText = ""}
                         }
                             
-                        GetRandomTask()
+                        
+                        Button {
+                            dataModel.loadRandomTask()
+                            textInput = dataModel.activity ?? ""
+                        } label: {
+                            Spacer()
+                            Text("Get random task!") // API call
+                                .padding(10)
+                                .background(Color("NavbarBlue"))
+                                .cornerRadius(10)
+                                .foregroundColor(.white)
+                            Spacer()
+                        }
+                        
                         HStack {
                             Spacer()
                             Text("How frequently?")
