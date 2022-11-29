@@ -18,7 +18,7 @@ struct WaveBottom: View {
                 .aspectRatio(contentMode: .fit)
                 .offset(y:34)
             if isAtMyTasks == true {
-                NavigationLink (destination: NewTaskView()) {
+                NavigationLink (destination: NewTaskView(textInput: "")) {
                     ZStack {
                         Circle()
                             .fill(Color("NavbarTopBlue"))

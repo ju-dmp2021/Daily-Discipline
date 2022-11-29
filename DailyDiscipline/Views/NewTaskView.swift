@@ -9,16 +9,18 @@ import SwiftUI
 
 struct NewTaskView: View {
     
-    @State var textInput: String = ""
+    @State var textInput: String
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var singleTaskListViewModel: SingleTaskListViewModel
     @EnvironmentObject var multipleTaskListViewModel: MultipleTaskListViewModel
     @State var selectedPriority: Frequency = .weekly
+    @State var showSheet: Bool = false
     
     @State var hasPressedAddSubTask: Bool = false
     @State var subTaskInput: [String] = []
     @State var tempText: String = ""
-    @StateObject private var dataModel = DataModel()
+    @State var hasPressedRandomTask: Bool = false
+    @StateObject var dataModel = DataModel()
     
     
     var body: some View {
@@ -55,12 +57,7 @@ struct NewTaskView: View {
                         .underline()
                         
                         if textInput.count != 0{
-                            
-                            
                             if hasPressedAddSubTask{
-                                
-                                
-                                
                                 ForEach($subTaskInput, id:\.self) { taskInput in
                                     
                                     HStack {
@@ -69,8 +66,6 @@ struct NewTaskView: View {
                                 }
                                 TextField("Add Subtask...", text: $tempText)
                             }
-                            
-                            
                             
                             Button{
                                 if hasPressedAddSubTask && tempText.count != 0 {
@@ -89,11 +84,9 @@ struct NewTaskView: View {
                             }
                             .onChange(of: subTaskInput) {newValue in tempText = ""}
                         }
-                            
                         
                         Button {
-                            dataModel.loadRandomTask()
-                            textInput = dataModel.activity ?? ""
+                            showSheet.toggle()
                         } label: {
                             Spacer()
                             Text("Get random task!") // API call
@@ -103,6 +96,9 @@ struct NewTaskView: View {
                                 .foregroundColor(.white)
                             Spacer()
                         }
+                        .sheet(isPresented: $showSheet, content: {
+                            SecondView(textInput: $textInput, hasPressedRandomTask: $hasPressedRandomTask)
+                        })
                         
                         HStack {
                             Spacer()
@@ -130,7 +126,6 @@ struct NewTaskView: View {
                             }
                             Spacer()
                         }
-
                     }
                     .padding()
                     
@@ -139,13 +134,18 @@ struct NewTaskView: View {
                 }
             }
         }
+        if hasPressedRandomTask {
+            onAppear{
+                textInput = dataModel.activity ?? "hmmmm"
+            }
+        }
     }
 }
 
 struct NewTaskView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
-            NewTaskView()
+            NewTaskView(textInput: "")
             GeometryReader { reader in
                 Color("NavbarTopBlue")
                     .frame(height: reader.safeAreaInsets.top, alignment: .top)
@@ -154,6 +154,56 @@ struct NewTaskView_Previews: PreviewProvider {
         }
     }
 }
+
+struct SecondView: View {
+    @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var dataModel = DataModel()
+    @Binding var textInput: String
+    @Binding var hasPressedRandomTask: Bool
+    var body: some View{
+        ZStack(){
+            Color.blue
+                .edgesIgnoringSafeArea(.all)
+            VStack{
+                Button {
+                    dataModel.getTaskFromCategory(type: "recreational")
+                } label: {
+                    Text("Recreational")
+                }.foregroundColor(.white)
+                    .padding()
+                Button {
+                    dataModel.getTaskFromCategory(type: "busywork")
+                } label: {
+                    Text("Busywork")
+                }.foregroundColor(.white)
+                    .padding()
+                Button {
+                    dataModel.getTaskFromCategory(type: "relaxation")
+                } label: {
+                    Text("Relaxation")
+                }.foregroundColor(.white)
+                    .padding()
+                Button {
+                    dataModel.getTaskFromCategory(type: "cooking")
+                } label: {
+                    Text("Cooking")
+                }.foregroundColor(.white)
+                    .padding()
+                Button {
+                    dataModel.getTaskFromCategory(type: "")
+                } label: {
+                    Text("Random")
+                }.foregroundColor(.white)
+                    .padding()
+            }
+        }
+        .onChange(of: dataModel.activity) { newValue in
+            textInput = dataModel.activity ?? ""
+            presentationMode.wrappedValue.dismiss()
+        }
+    }
+}
+
 
 extension NewTaskView {
     private var backButton: some View {

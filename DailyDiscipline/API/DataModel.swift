@@ -19,7 +19,7 @@ struct OpenBoeredAPIResults: Decodable {
 }
 
 class DataModel: ObservableObject {
-    private let urlString = "https://www.boredapi.com/api/activity/"
+    private var urlString = "https://www.boredapi.com/api/activity/"
     private var cancellable: Cancellable?
     private let jsonDecoder = JSONDecoder()
     
@@ -56,4 +56,11 @@ class DataModel: ObservableObject {
                 self?.type = data.type
             })
     }
+    
+    func getTaskFromCategory(type: String){
+        urlString = "https://www.boredapi.com/api/activity?type=\(type)"
+        print(urlString)
+        loadRandomTask()
+    }
+    
 }
