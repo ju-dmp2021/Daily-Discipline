@@ -18,7 +18,7 @@ struct DailyDisciplineApp: App {
     var body: some Scene {
         WindowGroup {
             ZStack {
-                ContentView()
+                CoreDataRelationships()
                 
                 GeometryReader { reader in
                     Color("NavbarTopBlue")

@@ -8,27 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    @State var tasks: [String] = ["Idag", "Har", "Vi"," Programmering"]
         
     var body: some View {
-        NavigationStack {
-            ZStack(alignment: .top) {
-                VStack {
-                    Navbar(leftIcon: "profileButton", text: "My List")
-                    Spacer()
-                    
-                    List {
-                        CategoryButtonView()
-                    }
-                    
-                    Spacer()
-                    WaveBottom(isAtMyTasks: true)
-                        .background(.red) // Need to make it transparant
-                }
-            }
-            
-        }
+        Text("Test")
     }
 }
 

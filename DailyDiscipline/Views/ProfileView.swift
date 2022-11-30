@@ -43,7 +43,6 @@ struct ProfileView: View {
                         }
                     }
                     Spacer()
-                    WaveBottom(isAtMyTasks: false)
                 }
             }
             .navigationBarBackButtonHidden(true)
@@ -67,7 +66,7 @@ struct ProfileView_Previews: PreviewProvider {
 extension ProfileView {
     private var achievementButton: some View {
         NavigationLink {
-            AchievementsView()
+
         } label: {
             VStack {
                 Image(systemName: "trophy.circle.fill")
@@ -80,7 +79,7 @@ extension ProfileView {
     }
     private var titlesButton: some View {
         NavigationLink {
-            TitlesView()
+
         } label: {
             VStack {
                 Image(systemName: "pencil.circle.fill")
