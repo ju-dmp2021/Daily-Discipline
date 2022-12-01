@@ -44,7 +44,7 @@ struct CoreDataRelationships: View {
                             Text("Today's tasks!")
                                 ForEach(vm.taskObjects) { object in
                                     if object.frequency?.name == "Daily" {
-                                        TaskObjectViews(entity: object)
+                                        TaskObjectView(entity: object)
                                         
                                     }
                                 }
@@ -53,7 +53,7 @@ struct CoreDataRelationships: View {
                                 Text("Weekly tasks!")
                                 ForEach(vm.taskObjects) { object in
                                     if object.frequency?.name == "Weekly" {
-                                        TaskObjectViews(entity: object)
+                                        TaskObjectView(entity: object)
                                     }
                                 }
                                 .onDelete(perform: vm.deleteTask)
@@ -61,7 +61,7 @@ struct CoreDataRelationships: View {
                                 Text("Monthly tasks!")
                                 ForEach(vm.taskObjects) { object in
                                     if object.frequency?.name == "Monthly" {
-                                        TaskObjectViews(entity: object)
+                                        TaskObjectView(entity: object)
                                     }
                                 }
                                 .onDelete(perform: vm.deleteTask)
@@ -84,7 +84,7 @@ struct CoreDataRelationships_Previews: PreviewProvider {
     }
 }
 
-struct TaskObjectViews: View {
+struct TaskObjectView: View {
     
     let entity: TaskObject
     @StateObject var vm = CoreDataRelationshipViewModel()
@@ -109,7 +109,6 @@ struct TaskObjectViews: View {
                     Button("Confirm") {
                         entity.isComplete = true
                         vm.updateUserLevel(points: entity.points)
-                   //     level.addPoints(points: Int(entity.points))
                         vm.save()
                     }
                 } message: {

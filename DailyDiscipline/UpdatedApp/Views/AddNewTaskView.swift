@@ -9,10 +9,13 @@ import SwiftUI
 
 struct AddNewTaskView: View {
     
+ //   @State var presetTasks = StoredTasks()
     @State var mainTask: String = ""
+    @State var selectedTask: String = "Go to the gym"
     @State var selectedPriority: FrequencyPicker = .daily
     @StateObject var vm = CoreDataRelationshipViewModel()
     @Environment(\.presentationMode) var presentationMode
+    
     
     var body: some View {
         NavigationStack {
@@ -31,7 +34,7 @@ struct AddNewTaskView: View {
                 .foregroundColor(.white)
                 .frame(height: 80)
                 .background(Color("NavbarBlue"))
-                Spacer()
+                
                 
                 Button(action: {
                     vm.addFrequency(name: "Daily")
@@ -43,6 +46,8 @@ struct AddNewTaskView: View {
                         .background(Color.blue.cornerRadius(10))
                 })
                 
+                StoredTasks(selectedTask: $selectedTask)
+                Text(selectedTask)
                 TextField(
                     "Describe your task...",
                     text: $mainTask)

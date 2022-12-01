@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C874E3A92938F9FD005AE929 /* StoredTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C874E3A82938F9FD005AE929 /* StoredTasks.swift */; };
+		C874E3AB2938FB81005AE929 /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C874E3AA2938FB81005AE929 /* AchievementsView.swift */; };
 		C8A1DDDF2927838B00FA983B /* DailyDisciplineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A1DDDE2927838B00FA983B /* DailyDisciplineApp.swift */; };
 		C8A1DDE12927838B00FA983B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A1DDE02927838B00FA983B /* ContentView.swift */; };
 		C8A1DDE32927838C00FA983B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8A1DDE22927838C00FA983B /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C874E3A82938F9FD005AE929 /* StoredTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredTasks.swift; sourceTree = "<group>"; };
+		C874E3AA2938FB81005AE929 /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
 		C8A1DDDB2927838B00FA983B /* DailyDiscipline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyDiscipline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8A1DDDE2927838B00FA983B /* DailyDisciplineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDisciplineApp.swift; sourceTree = "<group>"; };
 		C8A1DDE02927838B00FA983B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 				C8FC1C462937BB5B00AA9B57 /* Level */,
 				C8FC1C412937985900AA9B57 /* CoreData */,
 				C8FC1C3829377F7400AA9B57 /* PickerFrequency.swift */,
+				C874E3A82938F9FD005AE929 /* StoredTasks.swift */,
 			);
 			path = UpdatedApp;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 			children = (
 				C8FC1C3329377EB600AA9B57 /* TaskView.swift */,
 				C8FC1C3F2937813C00AA9B57 /* AddNewTaskView.swift */,
+				C874E3AA2938FB81005AE929 /* AchievementsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -215,11 +221,13 @@
 				C8FC1C3C29377F9700AA9B57 /* CoreDataModel.xcdatamodeld in Sources */,
 				C8D919F82927A86300955313 /* Navbar.swift in Sources */,
 				C8FC1C3429377EB600AA9B57 /* TaskView.swift in Sources */,
+				C874E3A92938F9FD005AE929 /* StoredTasks.swift in Sources */,
 				C8A1DDE12927838B00FA983B /* ContentView.swift in Sources */,
 				C8FC1C3929377F7400AA9B57 /* PickerFrequency.swift in Sources */,
 				C8A1DDEF2927860700FA983B /* ProfileView.swift in Sources */,
 				C8FC1C402937813C00AA9B57 /* AddNewTaskView.swift in Sources */,
 				C8FC1C3E293780D000AA9B57 /* CoreDataManager.swift in Sources */,
+				C874E3AB2938FB81005AE929 /* AchievementsView.swift in Sources */,
 				C8FC1C432937989200AA9B57 /* CoreDataRelationshipViewModel.swift in Sources */,
 				C8FC1C452937BB5200AA9B57 /* LevelTracker(Not Used).swift in Sources */,
 				C8A1DDDF2927838B00FA983B /* DailyDisciplineApp.swift in Sources */,

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ProfileView: View {
     
-   // @EnvironmentObject var level: LevelTracker
     @StateObject var vm = CoreDataRelationshipViewModel()
     
     var body: some View {
@@ -69,7 +68,7 @@ struct ProfileView_Previews: PreviewProvider {
 extension ProfileView {
     private var achievementButton: some View {
         NavigationLink {
-
+            AchievementsView()
         } label: {
             VStack {
                 Image(systemName: "trophy.circle.fill")
