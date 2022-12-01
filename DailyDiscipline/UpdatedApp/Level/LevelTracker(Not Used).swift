@@ -7,7 +7,7 @@
 
 import Foundation
 
-class LevelTracker {
+class LevelTracker: ObservableObject {
     
     @Published var amountOfPoints: Int = 0
     
@@ -19,7 +19,8 @@ class LevelTracker {
         return (amountOfPoints / 10 + 1)
     }
     
-    func addPoints() {
-        
+    func addPoints(points: Int) {
+        amountOfPoints += points
+        print(amountOfPoints)
     }
 }

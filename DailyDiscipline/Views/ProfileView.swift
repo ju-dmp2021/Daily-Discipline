@@ -9,7 +9,8 @@ import SwiftUI
 
 struct ProfileView: View {
     
-
+   // @EnvironmentObject var level: LevelTracker
+    @StateObject var vm = CoreDataRelationshipViewModel()
     
     var body: some View {
         NavigationStack {
@@ -26,7 +27,7 @@ struct ProfileView: View {
                         Text("Username")
                             .underline()
                         Spacer()
-                        Text("Level: 0")
+                        Text("Level: \(vm.getCalculatedLevel())")
                         RoundedRectangle(cornerRadius: 25)
                             .fill(.white)
                             .frame(width: 200, height: 20)
@@ -34,6 +35,8 @@ struct ProfileView: View {
                                 RoundedRectangle(cornerRadius: 25)
                                     .stroke(.black, lineWidth: 2)
                             )
+                        Text("EXP:")
+                        Text("\(vm.level[0].exp)")
                         HStack {
                             Spacer()
                             achievementButton

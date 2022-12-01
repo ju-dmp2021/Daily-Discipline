@@ -19,7 +19,7 @@
 		C8FC1C3E293780D000AA9B57 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FC1C3D293780D000AA9B57 /* CoreDataManager.swift */; };
 		C8FC1C402937813C00AA9B57 /* AddNewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FC1C3F2937813C00AA9B57 /* AddNewTaskView.swift */; };
 		C8FC1C432937989200AA9B57 /* CoreDataRelationshipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FC1C422937989200AA9B57 /* CoreDataRelationshipViewModel.swift */; };
-		C8FC1C452937BB5200AA9B57 /* LevelTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FC1C442937BB5200AA9B57 /* LevelTracker.swift */; };
+		C8FC1C452937BB5200AA9B57 /* LevelTracker(Not Used).swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FC1C442937BB5200AA9B57 /* LevelTracker(Not Used).swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +36,7 @@
 		C8FC1C3D293780D000AA9B57 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		C8FC1C3F2937813C00AA9B57 /* AddNewTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewTaskView.swift; sourceTree = "<group>"; };
 		C8FC1C422937989200AA9B57 /* CoreDataRelationshipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRelationshipViewModel.swift; sourceTree = "<group>"; };
-		C8FC1C442937BB5200AA9B57 /* LevelTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelTracker.swift; sourceTree = "<group>"; };
+		C8FC1C442937BB5200AA9B57 /* LevelTracker(Not Used).swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LevelTracker(Not Used).swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +128,7 @@
 		C8FC1C462937BB5B00AA9B57 /* Level */ = {
 			isa = PBXGroup;
 			children = (
-				C8FC1C442937BB5200AA9B57 /* LevelTracker.swift */,
+				C8FC1C442937BB5200AA9B57 /* LevelTracker(Not Used).swift */,
 			);
 			path = Level;
 			sourceTree = "<group>";
@@ -221,7 +221,7 @@
 				C8FC1C402937813C00AA9B57 /* AddNewTaskView.swift in Sources */,
 				C8FC1C3E293780D000AA9B57 /* CoreDataManager.swift in Sources */,
 				C8FC1C432937989200AA9B57 /* CoreDataRelationshipViewModel.swift in Sources */,
-				C8FC1C452937BB5200AA9B57 /* LevelTracker.swift in Sources */,
+				C8FC1C452937BB5200AA9B57 /* LevelTracker(Not Used).swift in Sources */,
 				C8A1DDDF2927838B00FA983B /* DailyDisciplineApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

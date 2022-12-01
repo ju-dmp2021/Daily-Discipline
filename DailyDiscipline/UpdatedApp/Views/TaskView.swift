@@ -45,6 +45,7 @@ struct CoreDataRelationships: View {
                                 ForEach(vm.taskObjects) { object in
                                     if object.frequency?.name == "Daily" {
                                         TaskObjectViews(entity: object)
+                                        
                                     }
                                 }
                                 .onDelete(perform: vm.deleteTask)
@@ -107,6 +108,8 @@ struct TaskObjectViews: View {
                 isPresented: $isPresentingConfirm) {
                     Button("Confirm") {
                         entity.isComplete = true
+                        vm.updateUserLevel(points: entity.points)
+                   //     level.addPoints(points: Int(entity.points))
                         vm.save()
                     }
                 } message: {

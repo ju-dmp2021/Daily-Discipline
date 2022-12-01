@@ -20,4 +20,7 @@
         <relationship name="frequency" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Frequency" inverseName="taskObjects" inverseEntity="Frequency"/>
         <relationship name="subTasks" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="SubTask" inverseName="taskObject" inverseEntity="SubTask"/>
     </entity>
+    <entity name="UserLevel" representedClassName="UserLevel" syncable="YES" codeGenerationType="class">
+        <attribute name="exp" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
 </model>

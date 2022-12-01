@@ -34,7 +34,7 @@ struct AddNewTaskView: View {
                 Spacer()
                 
                 Button(action: {
-                    vm.addFrequency()
+                    vm.addFrequency(name: "Daily")
                 }, label: {
                     Text("Add Frequency")
                         .foregroundColor(.white)

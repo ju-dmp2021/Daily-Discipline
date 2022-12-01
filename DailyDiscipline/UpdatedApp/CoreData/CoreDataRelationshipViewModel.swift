@@ -14,11 +14,29 @@ class CoreDataRelationshipViewModel: ObservableObject {
     @Published var frequencies: [Frequency] = []
     @Published var taskObjects: [TaskObject] = []
     @Published var subTasks: [SubTask] = []
+    @Published var level: [UserLevel] = []
     
     init() {
         getFrequencies()
+      /*  if frequencies.count < 2 {
+            
+            let newFrequency = Frequency(context: manager.context)
+            newFrequency.name = "Daily"
+            
+            let secondFrequency = Frequency(context: manager.context)
+            secondFrequency.name = "Weekly"
+            
+            let thirdFrequency = Frequency(context: manager.context)
+            thirdFrequency.name = "Monthly"
+            save()
+             
+        } */
         getTaskObjects()
         getSubTasks()
+        getUserLevel()
+        if level.count == 0 {
+            addUserLevel()
+        }
     }
     
     func getFrequencies() {
@@ -51,6 +69,21 @@ class CoreDataRelationshipViewModel: ObservableObject {
         }
     }
     
+    func getUserLevel(){
+        let request = NSFetchRequest<UserLevel>(entityName: "UserLevel")
+        
+        do {
+            level = try manager.context.fetch(request)
+        } catch let error {
+            print("Error fetching. \(error.localizedDescription)")
+        }
+    }
+    
+    func getCalculatedLevel() -> Int16{
+        let userLevel = level[0].exp / 10 + 1
+        return (userLevel)
+    }
+    
     func getTaskObjects(forFrequency frequency: Frequency) {
         let request = NSFetchRequest<TaskObject>(entityName: "TaskObject")
         
@@ -65,9 +98,9 @@ class CoreDataRelationshipViewModel: ObservableObject {
     }
     
     
-    func addFrequency() {
+    func addFrequency(name: String) {
         let newFrequency = Frequency(context: manager.context)
-        newFrequency.name = "Monthly"
+        newFrequency.name = "\(name)"
         save()
     }
     
@@ -89,6 +122,7 @@ class CoreDataRelationshipViewModel: ObservableObject {
         newTaskObject.dateCreated = Date()
         newTaskObject.category = "Fitness"
         newTaskObject.points = 1
+        
         if (picker == .daily) {
             newTaskObject.frequency = frequencies[0]
         } else if (picker == .weekly) {
@@ -106,6 +140,18 @@ class CoreDataRelationshipViewModel: ObservableObject {
         
         newSubTask.taskObject = taskObjects[0]
         newSubTask.frequency = frequencies[0]
+        save()
+    }
+    
+    func addUserLevel() {
+        let newUserLevel = UserLevel(context: manager.context)
+        newUserLevel.exp = 0
+        
+        save()
+    }
+    
+    func updateUserLevel(points: Int16) {
+        level[0].exp += points
         save()
     }
     
@@ -180,7 +226,7 @@ class CoreDataRelationshipViewModel: ObservableObject {
     }
     
     func save() {
-        frequencies.removeAll()   // Funkar om man kommenterar ut dessa, typ
+  //      frequencies.removeAll()   // Funkar om man kommenterar ut dessa, typ
         taskObjects.removeAll()
         subTasks.removeAll()
         
