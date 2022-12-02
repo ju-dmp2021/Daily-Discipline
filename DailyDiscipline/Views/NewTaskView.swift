@@ -97,7 +97,7 @@ struct NewTaskView: View {
                             Spacer()
                         }
                         .sheet(isPresented: $showSheet, content: {
-                            SecondView(textInput: $textInput, hasPressedRandomTask: $hasPressedRandomTask)
+                            RandomTaskPopupView(textInput: $textInput, hasPressedRandomTask: $hasPressedRandomTask)
                         })
                         
                         HStack {
@@ -155,54 +155,7 @@ struct NewTaskView_Previews: PreviewProvider {
     }
 }
 
-struct SecondView: View {
-    @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var dataModel = DataModel()
-    @Binding var textInput: String
-    @Binding var hasPressedRandomTask: Bool
-    var body: some View{
-        ZStack(){
-            Color.blue
-                .edgesIgnoringSafeArea(.all)
-            VStack{
-                Button {
-                    dataModel.getTaskFromCategory(type: "recreational")
-                } label: {
-                    Text("Recreational")
-                }.foregroundColor(.white)
-                    .padding()
-                Button {
-                    dataModel.getTaskFromCategory(type: "busywork")
-                } label: {
-                    Text("Busywork")
-                }.foregroundColor(.white)
-                    .padding()
-                Button {
-                    dataModel.getTaskFromCategory(type: "relaxation")
-                } label: {
-                    Text("Relaxation")
-                }.foregroundColor(.white)
-                    .padding()
-                Button {
-                    dataModel.getTaskFromCategory(type: "cooking")
-                } label: {
-                    Text("Cooking")
-                }.foregroundColor(.white)
-                    .padding()
-                Button {
-                    dataModel.getTaskFromCategory(type: "")
-                } label: {
-                    Text("Random")
-                }.foregroundColor(.white)
-                    .padding()
-            }
-        }
-        .onChange(of: dataModel.activity) { newValue in
-            textInput = dataModel.activity ?? ""
-            presentationMode.wrappedValue.dismiss()
-        }
-    }
-}
+
 
 
 extension NewTaskView {

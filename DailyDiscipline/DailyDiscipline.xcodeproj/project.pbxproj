@@ -17,6 +17,7 @@
 		11EF87C4292CD37200021384 /* MultipleTaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF87C3292CD37200021384 /* MultipleTaskRowView.swift */; };
 		11EF87C8292CD3BD00021384 /* SingleTaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF87C7292CD3BD00021384 /* SingleTaskListViewModel.swift */; };
 		11EF87CC292CFA7F00021384 /* MultipleTaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF87CB292CFA7F00021384 /* MultipleTaskListViewModel.swift */; };
+		11F940522939EACC00D1B0F0 /* RandomTaskPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F940512939EACC00D1B0F0 /* RandomTaskPopupView.swift */; };
 		C81DC56C292908DF00784D76 /* AchievementAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81DC56B292908DF00784D76 /* AchievementAmount.swift */; };
 		C81DC56E29290E4600784D76 /* TitleLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81DC56D29290E4600784D76 /* TitleLayout.swift */; };
 		C81DC570292914A900784D76 /* GetRandomTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81DC56F292914A900784D76 /* GetRandomTask.swift */; };
@@ -47,6 +48,7 @@
 		11EF87C3292CD37200021384 /* MultipleTaskRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleTaskRowView.swift; sourceTree = "<group>"; };
 		11EF87C7292CD3BD00021384 /* SingleTaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTaskListViewModel.swift; sourceTree = "<group>"; };
 		11EF87CB292CFA7F00021384 /* MultipleTaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleTaskListViewModel.swift; sourceTree = "<group>"; };
+		11F940512939EACC00D1B0F0 /* RandomTaskPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomTaskPopupView.swift; sourceTree = "<group>"; };
 		C81DC56B292908DF00784D76 /* AchievementAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementAmount.swift; sourceTree = "<group>"; };
 		C81DC56D29290E4600784D76 /* TitleLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLayout.swift; sourceTree = "<group>"; };
 		C81DC56F292914A900784D76 /* GetRandomTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRandomTask.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 			children = (
 				11C09B1D2934EDB9003BD5D2 /* DataModel.swift */,
 				11C09B1F2934EDE1003BD5D2 /* TaskData.swift */,
+				11F940512939EACC00D1B0F0 /* RandomTaskPopupView.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				C81DC56E29290E4600784D76 /* TitleLayout.swift in Sources */,
 				C8D919F529278E7700955313 /* SettingsView.swift in Sources */,
 				C8D919F82927A86300955313 /* Navbar.swift in Sources */,
+				11F940522939EACC00D1B0F0 /* RandomTaskPopupView.swift in Sources */,
 				C8A1DDF12927862200FA983B /* AchievementsView.swift in Sources */,
 				C8D919FC2927CDC500955313 /* DisplayTasks.swift in Sources */,
 				C8D919FA2927BC9400955313 /* WaveBottom.swift in Sources */,
