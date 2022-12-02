@@ -13,9 +13,6 @@ struct OpenBoeredAPIResults: Decodable {
     let activity : String
     let key: String
     let type: String
-    
-    
-    //let results: TaskData
 }
 
 class DataModel: ObservableObject {

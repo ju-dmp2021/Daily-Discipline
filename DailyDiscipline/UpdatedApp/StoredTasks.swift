@@ -35,15 +35,23 @@ extension taskSelector {
 struct StoredTasks: View {
     
     let storedTasks: [Tasks] = [
-    Tasks(name: "Go to the gym", category: "Fitness"),
     Tasks(name: "Buy Groceries", category: "Shopping"),
-    Tasks(name: "Walk the dog", category: "Health"),
+    Tasks(name: "Go to the gym", category: "Fitness"),
+    Tasks(name: "Walk the dog", category: "Health")
     ]
     
-    @Binding var selectedTask: String
+   //@Binding var selectedTask: String
+    
+    @Binding var currentTask: Tasks
     
     var body: some View {
-       
+        Picker("", selection: $currentTask.name) {
+            ForEach(storedTasks) { task in
+                Text("\(task.name)")
+                    .tag(task.name)
+            }
+        }
+    /*
         Picker (
             selection: $selectedTask) {
                 ForEach(storedTasks, id: \.self) { task in
@@ -53,19 +61,20 @@ struct StoredTasks: View {
                     }
             } label: {
                 Text("\(selectedTask)")
-            }
+            }*/
     }
 }
 
 struct StoredTasks_Preview: PreviewProvider {
-    @State static var selectedTask = "Go to the gym"
+   // @State static var selectedTask = "Go to the gym"
+    @State static var currentTask = Tasks(name: "Buy Groceries", category: "Shopping")
     static var previews: some View {
-        StoredTasks(selectedTask: $selectedTask)
+        StoredTasks(currentTask: $currentTask)
     }
 }
 
-struct Tasks: Hashable {
-   // var id = UUID()
+struct Tasks: Identifiable, Hashable {
+    var id = UUID()
     
     var name: String
     var category: String

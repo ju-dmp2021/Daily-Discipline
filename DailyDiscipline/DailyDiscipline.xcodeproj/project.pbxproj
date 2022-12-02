@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		11F9405B2939FF9800D1B0F0 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F9405A2939FF9800D1B0F0 /* DataModel.swift */; };
-		11F9405D2939FFA500D1B0F0 /* TaskData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F9405C2939FFA500D1B0F0 /* TaskData.swift */; };
 		11F9405F2939FFBD00D1B0F0 /* RandomTaskPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F9405E2939FFBD00D1B0F0 /* RandomTaskPopupView.swift */; };
 		C874E3A92938F9FD005AE929 /* StoredTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C874E3A82938F9FD005AE929 /* StoredTasks.swift */; };
 		C874E3AB2938FB81005AE929 /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C874E3AA2938FB81005AE929 /* AchievementsView.swift */; };
@@ -29,7 +28,6 @@
 
 /* Begin PBXFileReference section */
 		11F9405A2939FF9800D1B0F0 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
-		11F9405C2939FFA500D1B0F0 /* TaskData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskData.swift; sourceTree = "<group>"; };
 		11F9405E2939FFBD00D1B0F0 /* RandomTaskPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomTaskPopupView.swift; sourceTree = "<group>"; };
 		C874E3A82938F9FD005AE929 /* StoredTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredTasks.swift; sourceTree = "<group>"; };
 		C874E3AA2938FB81005AE929 /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
@@ -64,7 +62,6 @@
 			isa = PBXGroup;
 			children = (
 				11F9405A2939FF9800D1B0F0 /* DataModel.swift */,
-				11F9405C2939FFA500D1B0F0 /* TaskData.swift */,
 				11F9405E2939FFBD00D1B0F0 /* RandomTaskPopupView.swift */,
 			);
 			path = API;
@@ -250,7 +247,6 @@
 				C8FC1C432937989200AA9B57 /* CoreDataRelationshipViewModel.swift in Sources */,
 				C8FC1C452937BB5200AA9B57 /* LevelTracker(Not Used).swift in Sources */,
 				C8A1DDDF2927838B00FA983B /* DailyDisciplineApp.swift in Sources */,
-				11F9405D2939FFA500D1B0F0 /* TaskData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

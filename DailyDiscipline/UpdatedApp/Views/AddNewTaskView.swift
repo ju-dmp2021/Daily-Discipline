@@ -21,6 +21,9 @@ struct AddNewTaskView: View {
     @State var hasPressedAddSubTask: Bool = false
     @State var showSheet: Bool = false
     
+    @State var currentTask: Tasks = Tasks(name: "Buy Groceries", category: "Shopping")
+    
+    
     
     var body: some View {
         NavigationStack {
@@ -51,8 +54,13 @@ struct AddNewTaskView: View {
                         .background(Color.blue.cornerRadius(10))
                 })
                 
-                StoredTasks(selectedTask: $selectedTask)
-                Text(selectedTask)
+              //  StoredTasks(selectedTask: $selectedTask)
+             //   Text(selectedTask)
+                
+                StoredTasks(currentTask: $currentTask)
+                Text(currentTask.name)
+                Text(currentTask.category)
+                
                 TextField(
                     "Describe your task...",
                     text: $mainTask)
@@ -68,7 +76,7 @@ struct AddNewTaskView: View {
                             .background(Color.blue.cornerRadius(10))
                     })
                     Button(action: {
-                        vm.addSubTask()
+                        vm.addTest()
                     }, label: {
                         Text("Add SubTask")
                             .foregroundColor(.white)

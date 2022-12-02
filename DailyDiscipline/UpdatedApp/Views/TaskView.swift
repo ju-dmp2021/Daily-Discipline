@@ -93,6 +93,7 @@ struct TaskObjectView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
             HStack {
+                
                 Button {
                     if !entity.isComplete {
                         isPresentingConfirm = true

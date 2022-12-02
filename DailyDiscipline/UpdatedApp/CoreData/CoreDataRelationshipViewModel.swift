@@ -226,7 +226,7 @@ class CoreDataRelationshipViewModel: ObservableObject {
     }
     
     func save() {
-  //      frequencies.removeAll()   // Funkar om man kommenterar ut dessa, typ
+        frequencies.removeAll()   // Funkar om man kommenterar ut dessa, typ
         taskObjects.removeAll()
         subTasks.removeAll()
         
