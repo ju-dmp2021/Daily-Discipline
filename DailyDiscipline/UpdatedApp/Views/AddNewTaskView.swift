@@ -16,6 +16,11 @@ struct AddNewTaskView: View {
     @StateObject var vm = CoreDataRelationshipViewModel()
     @Environment(\.presentationMode) var presentationMode
     
+    @State var hasPressedRandomTask: Bool = false
+    @StateObject var dataModel = DataModel()
+    @State var hasPressedAddSubTask: Bool = false
+    @State var showSheet: Bool = false
+    
     
     var body: some View {
         NavigationStack {
@@ -52,45 +57,61 @@ struct AddNewTaskView: View {
                     "Describe your task...",
                     text: $mainTask)
                 PickerFrequency(selectedFrequency: $selectedPriority)
-                Button(action: {
-                    vm.addTaskObject(mainTask: mainTask, picker: selectedPriority)
-                }, label: {
-                    Text("Add Task")
-                        .foregroundColor(.white)
-                        .frame(height: 55)
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue.cornerRadius(10))
-                })
-                Button(action: {
-                    vm.addSubTask()
-                }, label: {
-                    Text("Add SubTask")
-                        .foregroundColor(.white)
-                        .frame(height: 55)
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue.cornerRadius(10))
-                })
-                Button(action: {
-                    vm.deleteTaskObject()
-                }, label: {
-                    Text("Delete TaskObject")
-                        .foregroundColor(.white)
-                        .frame(height: 55)
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue.cornerRadius(10))
-                })
-                Button(action: {
-                    vm.deleteSubTask()
-                }, label: {
-                    Text("Delete SubTask")
-                        .foregroundColor(.white)
-                        .frame(height: 55)
-                        .frame(maxWidth: .infinity)
-                        .background(Color.blue.cornerRadius(10))
-                })
+                Group{
+                    Button(action: {
+                        vm.addTaskObject(mainTask: mainTask, picker: selectedPriority)
+                    }, label: {
+                        Text("Add Task")
+                            .foregroundColor(.white)
+                            .frame(height: 55)
+                            .frame(maxWidth: .infinity)
+                            .background(Color.blue.cornerRadius(10))
+                    })
+                    Button(action: {
+                        vm.addSubTask()
+                    }, label: {
+                        Text("Add SubTask")
+                            .foregroundColor(.white)
+                            .frame(height: 55)
+                            .frame(maxWidth: .infinity)
+                            .background(Color.blue.cornerRadius(10))
+                    })
+                    Button(action: {
+                        vm.deleteTaskObject()
+                    }, label: {
+                        Text("Delete TaskObject")
+                            .foregroundColor(.white)
+                            .frame(height: 55)
+                            .frame(maxWidth: .infinity)
+                            .background(Color.blue.cornerRadius(10))
+                    })
+                    Button(action: {
+                        vm.deleteSubTask()
+                    }, label: {
+                        Text("Delete SubTask")
+                            .foregroundColor(.white)
+                            .frame(height: 55)
+                            .frame(maxWidth: .infinity)
+                            .background(Color.blue.cornerRadius(10))
+                    })
+                    Button {
+                        showSheet.toggle()
+                    } label: {
+                        Text("Get random task!") // API call
+                            .foregroundColor(.white)
+                            .frame(height: 55)
+                            .frame(maxWidth: .infinity)
+                            .background(Color.blue.cornerRadius(10))
+                    }
+                    .sheet(isPresented: $showSheet, content: {
+                        RandomTaskPopupView(textInput: $mainTask, hasPressedRandomTask: $hasPressedRandomTask)
+                    })
+                }
+                
             }
             .navigationBarBackButtonHidden(true)
         }
+        
     }
 }
 
