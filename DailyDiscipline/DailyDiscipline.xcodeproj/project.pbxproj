@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11F940572939F03B00D1B0F0 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F940542939F03B00D1B0F0 /* DataModel.swift */; };
+		11F940582939F03B00D1B0F0 /* TaskData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F940552939F03B00D1B0F0 /* TaskData.swift */; };
+		11F940592939F03B00D1B0F0 /* RandomTaskPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F940562939F03B00D1B0F0 /* RandomTaskPopupView.swift */; };
 		C874E3A92938F9FD005AE929 /* StoredTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = C874E3A82938F9FD005AE929 /* StoredTasks.swift */; };
 		C874E3AB2938FB81005AE929 /* AchievementsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C874E3AA2938FB81005AE929 /* AchievementsView.swift */; };
 		C8A1DDDF2927838B00FA983B /* DailyDisciplineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A1DDDE2927838B00FA983B /* DailyDisciplineApp.swift */; };
@@ -25,6 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11F940542939F03B00D1B0F0 /* DataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataModel.swift; path = ../../../../../../Desktop/API/DataModel.swift; sourceTree = "<group>"; };
+		11F940552939F03B00D1B0F0 /* TaskData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskData.swift; path = ../../../../../../Desktop/API/TaskData.swift; sourceTree = "<group>"; };
+		11F940562939F03B00D1B0F0 /* RandomTaskPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RandomTaskPopupView.swift; path = ../../../../../../Desktop/API/RandomTaskPopupView.swift; sourceTree = "<group>"; };
 		C874E3A82938F9FD005AE929 /* StoredTasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredTasks.swift; sourceTree = "<group>"; };
 		C874E3AA2938FB81005AE929 /* AchievementsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementsView.swift; sourceTree = "<group>"; };
 		C8A1DDDB2927838B00FA983B /* DailyDiscipline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyDiscipline.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +60,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11F940532939EF8300D1B0F0 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				11F940542939F03B00D1B0F0 /* DataModel.swift */,
+				11F940562939F03B00D1B0F0 /* RandomTaskPopupView.swift */,
+				11F940552939F03B00D1B0F0 /* TaskData.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		C8A1DDD22927838B00FA983B = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +127,7 @@
 		C8FC1C3529377ECC00AA9B57 /* UpdatedApp */ = {
 			isa = PBXGroup;
 			children = (
+				11F940532939EF8300D1B0F0 /* API */,
 				C8FC1C472937BB7900AA9B57 /* Views */,
 				C8FC1C462937BB5B00AA9B57 /* Level */,
 				C8FC1C412937985900AA9B57 /* CoreData */,
@@ -225,12 +242,15 @@
 				C8A1DDE12927838B00FA983B /* ContentView.swift in Sources */,
 				C8FC1C3929377F7400AA9B57 /* PickerFrequency.swift in Sources */,
 				C8A1DDEF2927860700FA983B /* ProfileView.swift in Sources */,
+				11F940592939F03B00D1B0F0 /* RandomTaskPopupView.swift in Sources */,
+				11F940572939F03B00D1B0F0 /* DataModel.swift in Sources */,
 				C8FC1C402937813C00AA9B57 /* AddNewTaskView.swift in Sources */,
 				C8FC1C3E293780D000AA9B57 /* CoreDataManager.swift in Sources */,
 				C874E3AB2938FB81005AE929 /* AchievementsView.swift in Sources */,
 				C8FC1C432937989200AA9B57 /* CoreDataRelationshipViewModel.swift in Sources */,
 				C8FC1C452937BB5200AA9B57 /* LevelTracker(Not Used).swift in Sources */,
 				C8A1DDDF2927838B00FA983B /* DailyDisciplineApp.swift in Sources */,
+				11F940582939F03B00D1B0F0 /* TaskData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
