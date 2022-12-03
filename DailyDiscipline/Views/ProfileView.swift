@@ -10,12 +10,14 @@ import SwiftUI
 struct ProfileView: View {
     
     @StateObject var vm = CoreDataRelationshipViewModel()
+    @State var showOptionsView = false
     
     var body: some View {
+        ZStack{
         NavigationStack {
-            ZStack(alignment: .top) {
+            ZStack {
                 VStack {
-                    Navbar(leftIcon: "backButton", text: "Profile")
+                    Navbar(showOptionsView: $showOptionsView, leftIcon: "backButton", text: "Profile")
                     Spacer()
                     
                     VStack {
@@ -44,11 +46,21 @@ struct ProfileView: View {
                             Spacer()
                         }
                     }
+                    
                     Spacer()
                 }
             }
             .navigationBarBackButtonHidden(true)
+            
         }
+        
+            if showOptionsView {
+                OptionsView()
+                    .padding(.leading, 120)
+                    .transition(.move(edge: .trailing))
+                    .animation(.default)
+            }
+        }.zIndex(2.0)
     }
 }
 
