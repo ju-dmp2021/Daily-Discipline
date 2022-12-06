@@ -84,16 +84,15 @@ struct ContentView: View {
                         .scrollContentBackground(.hidden)
                     }
                     Spacer()
-                    Button {
-                        showNewTaskSheet.toggle()
-                    } label: {
-                        HStack {
-                            Spacer()
+                    HStack {
+                        Spacer()
+                        Button {
+                            showNewTaskSheet.toggle()
+                        } label: {
                             Image(systemName: "plus.circle")
                                 .font(.system(size: 50))
                                 .padding(.trailing, 40)
                         }
-                            
                     }
                 }
                 .sheet(isPresented: $showNewTaskSheet) {
@@ -101,17 +100,17 @@ struct ContentView: View {
                 }
             }
             .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    NavigationLink {
+                        ProfileView()
+                    } label: {
+                        Image(systemName: "person.fill")
+                    }
+                }
                 ToolbarItem {
                     Button {
                                                     } label: {
                         Label("Settings", systemImage: "gearshape.fill")
-                    }
-                }
-                ToolbarItem(placement: .navigationBarLeading) {
-                    NavigationLink {
-                        
-                    } label: {
-                        Image(systemName: "person.fill")
                     }
                 }
             }
