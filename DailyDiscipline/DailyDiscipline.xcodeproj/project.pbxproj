@@ -11,6 +11,10 @@
 		C86BAC40293F8004007E76DA /* UserLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86BAC3F293F8004007E76DA /* UserLevelViewModel.swift */; };
 		C86BAC42293F80DD007E76DA /* CoreDataManagerUserLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86BAC41293F80DD007E76DA /* CoreDataManagerUserLevel.swift */; };
 		C86BAC46293F8577007E76DA /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86BAC45293F8577007E76DA /* DateView.swift */; };
+		C86BAC4B293FA131007E76DA /* LevelBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86BAC4A293FA131007E76DA /* LevelBarView.swift */; };
+		C86BAC4D293FA2A0007E76DA /* ProfileButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86BAC4C293FA2A0007E76DA /* ProfileButtonsView.swift */; };
+		C86BAC4F293FA583007E76DA /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86BAC4E293FA583007E76DA /* AchievementView.swift */; };
+		C86BAC51293FA623007E76DA /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86BAC50293FA623007E76DA /* TitleView.swift */; };
 		C8A1DDDF2927838B00FA983B /* DailyDisciplineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A1DDDE2927838B00FA983B /* DailyDisciplineApp.swift */; };
 		C8A1DDE32927838C00FA983B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8A1DDE22927838C00FA983B /* Assets.xcassets */; };
 		C8A1DDE62927838C00FA983B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8A1DDE52927838C00FA983B /* Preview Assets.xcassets */; };
@@ -29,6 +33,10 @@
 		C86BAC3F293F8004007E76DA /* UserLevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLevelViewModel.swift; sourceTree = "<group>"; };
 		C86BAC41293F80DD007E76DA /* CoreDataManagerUserLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerUserLevel.swift; sourceTree = "<group>"; };
 		C86BAC45293F8577007E76DA /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
+		C86BAC4A293FA131007E76DA /* LevelBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelBarView.swift; sourceTree = "<group>"; };
+		C86BAC4C293FA2A0007E76DA /* ProfileButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButtonsView.swift; sourceTree = "<group>"; };
+		C86BAC4E293FA583007E76DA /* AchievementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementView.swift; sourceTree = "<group>"; };
+		C86BAC50293FA623007E76DA /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		C8A1DDDB2927838B00FA983B /* DailyDiscipline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyDiscipline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8A1DDDE2927838B00FA983B /* DailyDisciplineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDisciplineApp.swift; sourceTree = "<group>"; };
 		C8A1DDE22927838C00FA983B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,21 +65,22 @@
 		C86BAC39293F73B3007E76DA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C8FCDAAA293F6022008AFFDB /* ContentView.swift */,
-				C86BAC44293F853F007E76DA /* ContentViewSubViews */,
-				C86BAC3D293F78B7007E76DA /* ProfileView.swift */,
-				C8FCDAB0293F60C1008AFFDB /* NewTaskObjectView.swift */,
-				C86BAC3A293F73B9007E76DA /* SubViews */,
+				C86BAC53293FAA94007E76DA /* ContentView */,
+				C86BAC52293FAA7C007E76DA /* NewTaskObjectView */,
+				C86BAC54293FAAB2007E76DA /* ProfileView */,
+				C86BAC56293FAAE2007E76DA /* AchievementView */,
+				C86BAC55293FAAD4007E76DA /* TitleView */,
+				C86BAC3A293F73B9007E76DA /* GlobalSubViews */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		C86BAC3A293F73B9007E76DA /* SubViews */ = {
+		C86BAC3A293F73B9007E76DA /* GlobalSubViews */ = {
 			isa = PBXGroup;
 			children = (
 				C8FCDAB2293F60DB008AFFDB /* PickerFrequency.swift */,
 			);
-			path = SubViews;
+			path = GlobalSubViews;
 			sourceTree = "<group>";
 		};
 		C86BAC3B293F73C9007E76DA /* CoreData */ = {
@@ -102,6 +111,57 @@
 				C86BAC45293F8577007E76DA /* DateView.swift */,
 			);
 			path = ContentViewSubViews;
+			sourceTree = "<group>";
+		};
+		C86BAC49293F9820007E76DA /* ProfileSubViews */ = {
+			isa = PBXGroup;
+			children = (
+				C86BAC4A293FA131007E76DA /* LevelBarView.swift */,
+				C86BAC4C293FA2A0007E76DA /* ProfileButtonsView.swift */,
+			);
+			path = ProfileSubViews;
+			sourceTree = "<group>";
+		};
+		C86BAC52293FAA7C007E76DA /* NewTaskObjectView */ = {
+			isa = PBXGroup;
+			children = (
+				C8FCDAB0293F60C1008AFFDB /* NewTaskObjectView.swift */,
+			);
+			path = NewTaskObjectView;
+			sourceTree = "<group>";
+		};
+		C86BAC53293FAA94007E76DA /* ContentView */ = {
+			isa = PBXGroup;
+			children = (
+				C8FCDAAA293F6022008AFFDB /* ContentView.swift */,
+				C86BAC44293F853F007E76DA /* ContentViewSubViews */,
+			);
+			path = ContentView;
+			sourceTree = "<group>";
+		};
+		C86BAC54293FAAB2007E76DA /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				C86BAC3D293F78B7007E76DA /* ProfileView.swift */,
+				C86BAC49293F9820007E76DA /* ProfileSubViews */,
+			);
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
+		C86BAC55293FAAD4007E76DA /* TitleView */ = {
+			isa = PBXGroup;
+			children = (
+				C86BAC50293FA623007E76DA /* TitleView.swift */,
+			);
+			path = TitleView;
+			sourceTree = "<group>";
+		};
+		C86BAC56293FAAE2007E76DA /* AchievementView */ = {
+			isa = PBXGroup;
+			children = (
+				C86BAC4E293FA583007E76DA /* AchievementView.swift */,
+			);
+			path = AchievementView;
 			sourceTree = "<group>";
 		};
 		C8A1DDD22927838B00FA983B = {
@@ -213,6 +273,8 @@
 				C8FCDAB3293F60DB008AFFDB /* PickerFrequency.swift in Sources */,
 				C86BAC40293F8004007E76DA /* UserLevelViewModel.swift in Sources */,
 				C86BAC42293F80DD007E76DA /* CoreDataManagerUserLevel.swift in Sources */,
+				C86BAC4B293FA131007E76DA /* LevelBarView.swift in Sources */,
+				C86BAC4F293FA583007E76DA /* AchievementView.swift in Sources */,
 				C8FCDAAB293F6022008AFFDB /* ContentView.swift in Sources */,
 				C86BAC46293F8577007E76DA /* DateView.swift in Sources */,
 				C86BAC3E293F78B7007E76DA /* ProfileView.swift in Sources */,
@@ -220,6 +282,8 @@
 				C8FCDAB9293F6144008AFFDB /* ViewModel.swift in Sources */,
 				C8FCDAB5293F60EF008AFFDB /* CategoryToImage.swift in Sources */,
 				C8FCDAAF293F60A0008AFFDB /* Persistance.swift in Sources */,
+				C86BAC51293FA623007E76DA /* TitleView.swift in Sources */,
+				C86BAC4D293FA2A0007E76DA /* ProfileButtonsView.swift in Sources */,
 				C8FCDAB7293F6112008AFFDB /* CoreDataManagerTaskObject.swift in Sources */,
 				C8FCDABC293F6211008AFFDB /* CoreDataContainer.xcdatamodeld in Sources */,
 				C8A1DDDF2927838B00FA983B /* DailyDisciplineApp.swift in Sources */,

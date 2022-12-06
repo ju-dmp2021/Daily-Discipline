@@ -50,6 +50,11 @@ class CoreDataManagerUserLevel: ObservableObject {
         return userExperience
     }
     
+    func getModuloExperience() -> Float {
+        let moduloExperience = savedUserLevel[0].exp % 10
+        return Float(moduloExperience)
+    }
+    
     func saveData() {
         do {
             try moc.save()

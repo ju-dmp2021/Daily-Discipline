@@ -13,6 +13,9 @@ struct ProfileView: View {
     
     var userLevelManager = CoreDataManagerUserLevel.shared
     @StateObject var userLevelViewModel = CoreDataManagerUserLevel()
+    @State var showAchievementView = false
+    @State var showTitleView = false
+
     
     var body: some View {
         NavigationStack {
@@ -26,15 +29,14 @@ struct ProfileView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(width: 200)
+                        .padding(.top, 130)
                     Text("Username")
                     Text("Level: \(userLevelViewModel.getCalculatedLevel())")
-                    Text("EXP: \(userLevelViewModel.getUserExperience())")
-                    RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
-                        .frame(width: 200, height: 20)
-                    HStack(spacing: 100) {
-                        Image(systemName: "trophy")
-                        Image(systemName: "medal")
-                    }
+
+                    LevelBarView(moduloLevel: userLevelViewModel.getModuloExperience())
+                    
+                    ProfileButtonsView(showAchievementView: $showAchievementView, showTitleView: $showTitleView)
+                        .padding(.top, 60)
                 }
                 .foregroundColor(.black)
                 .toolbar {
@@ -52,6 +54,12 @@ struct ProfileView: View {
                 .navigationBarBackButtonHidden(true)
                 .foregroundColor(.white)
                 .accentColor(.white)
+                .sheet(isPresented: $showAchievementView) {
+                    AchievementView()
+                }
+                .sheet(isPresented: $showTitleView) {
+                    TitleView()
+                }
             }
         }
     }
