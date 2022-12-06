@@ -9,10 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var coreDataManager = CoreDataManager.shared
+    var taskObjectManager = CoreDataManagerTaskObject.shared
+    var userLevelManager = CoreDataManagerUserLevel.shared
     @State var taskObjectText: String = ""
     @State private var showNewTaskSheet = false
-    @StateObject var viewModel = ViewModel()
+    @StateObject var taskObjectViewModel = ViewModel()
+    @StateObject var userLevelViewModel = CoreDataManagerUserLevel()
     @State var selectedPriority: FrequencyPicker = .daily
     
     init(){
@@ -33,31 +35,17 @@ struct ContentView: View {
                     .edgesIgnoringSafeArea(.all)
                 
                 VStack{
-                    Text(Date.now, format: .dateTime.weekday())
-                        .fontDesign(.serif)
-                        .fontWeight(.semibold)
-                        .font(.system(size: 30))
-                        .padding(.top)
-                        .textInputAutocapitalization(.words)
-                    Text(Date.now, format: .dateTime.day(.defaultDigits))
-                        .fontDesign(.serif)
-                        .font(.system(size: 75))
-                        .underline()
-                        .offset(x: 0, y: -5)
-                    Text(Date.now, format: .dateTime.month(.wide))
-                        .fontDesign(.serif)
-                        .font(.system(size: 25))
-                        .fontWeight(.medium)
-                        .textInputAutocapitalization(.words)
+                    DateView()
                     
                     
                     PickerFrequency(selectedFrequency: $selectedPriority)
-                    if viewModel.dataArr.count != 0 {
+                    if taskObjectViewModel.dataArr.count != 0 {
                         List {
-                            ForEach(viewModel.dataArr) { task in
+                            ForEach(taskObjectViewModel.dataArr) { task in
                                 HStack {
                                     Button {
                                         task.isComplete.toggle()
+                                        userLevelViewModel.addUserExperience(points: task.points)
                                     } label: {
                                         if task.isComplete == true {
                                             Image(systemName: "circle.fill")
@@ -78,7 +66,7 @@ struct ContentView: View {
                                     }
                                 }
                             }
-                            .onDelete(perform: coreDataManager.deleteTaskObject)
+                            .onDelete(perform: taskObjectManager.deleteTaskObject)
                             .listRowBackground(Color.clear)
                         }
                         .scrollContentBackground(.hidden)
@@ -109,7 +97,8 @@ struct ContentView: View {
                 }
                 ToolbarItem {
                     Button {
-                                                    } label: {
+                        
+                    } label: {
                         Label("Settings", systemImage: "gearshape.fill")
                     }
                 }

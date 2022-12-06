@@ -11,6 +11,9 @@ struct ProfileView: View {
     
     @Environment(\.dismiss) private var dismiss
     
+    var userLevelManager = CoreDataManagerUserLevel.shared
+    @StateObject var userLevelViewModel = CoreDataManagerUserLevel()
+    
     var body: some View {
         NavigationStack {
             ZStack(alignment: .top) {
@@ -24,7 +27,8 @@ struct ProfileView: View {
                         .scaledToFit()
                         .frame(width: 200)
                     Text("Username")
-                    Text("Level:")
+                    Text("Level: \(userLevelViewModel.getCalculatedLevel())")
+                    Text("EXP: \(userLevelViewModel.getUserExperience())")
                     RoundedRectangle(cornerSize: CGSize(width: 10, height: 10))
                         .frame(width: 200, height: 20)
                     HStack(spacing: 100) {

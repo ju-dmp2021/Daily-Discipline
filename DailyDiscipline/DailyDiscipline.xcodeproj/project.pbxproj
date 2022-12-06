@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		C86BAC3E293F78B7007E76DA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86BAC3D293F78B7007E76DA /* ProfileView.swift */; };
+		C86BAC40293F8004007E76DA /* UserLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86BAC3F293F8004007E76DA /* UserLevelViewModel.swift */; };
+		C86BAC42293F80DD007E76DA /* CoreDataManagerUserLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86BAC41293F80DD007E76DA /* CoreDataManagerUserLevel.swift */; };
+		C86BAC46293F8577007E76DA /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86BAC45293F8577007E76DA /* DateView.swift */; };
 		C8A1DDDF2927838B00FA983B /* DailyDisciplineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A1DDDE2927838B00FA983B /* DailyDisciplineApp.swift */; };
 		C8A1DDE32927838C00FA983B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8A1DDE22927838C00FA983B /* Assets.xcassets */; };
 		C8A1DDE62927838C00FA983B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8A1DDE52927838C00FA983B /* Preview Assets.xcassets */; };
@@ -16,13 +19,16 @@
 		C8FCDAB1293F60C1008AFFDB /* NewTaskObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FCDAB0293F60C1008AFFDB /* NewTaskObjectView.swift */; };
 		C8FCDAB3293F60DB008AFFDB /* PickerFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FCDAB2293F60DB008AFFDB /* PickerFrequency.swift */; };
 		C8FCDAB5293F60EF008AFFDB /* CategoryToImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FCDAB4293F60EF008AFFDB /* CategoryToImage.swift */; };
-		C8FCDAB7293F6112008AFFDB /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FCDAB6293F6112008AFFDB /* CoreDataManager.swift */; };
+		C8FCDAB7293F6112008AFFDB /* CoreDataManagerTaskObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FCDAB6293F6112008AFFDB /* CoreDataManagerTaskObject.swift */; };
 		C8FCDAB9293F6144008AFFDB /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FCDAB8293F6144008AFFDB /* ViewModel.swift */; };
 		C8FCDABC293F6211008AFFDB /* CoreDataContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C8FCDABA293F6211008AFFDB /* CoreDataContainer.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C86BAC3D293F78B7007E76DA /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		C86BAC3F293F8004007E76DA /* UserLevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLevelViewModel.swift; sourceTree = "<group>"; };
+		C86BAC41293F80DD007E76DA /* CoreDataManagerUserLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerUserLevel.swift; sourceTree = "<group>"; };
+		C86BAC45293F8577007E76DA /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		C8A1DDDB2927838B00FA983B /* DailyDiscipline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyDiscipline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8A1DDDE2927838B00FA983B /* DailyDisciplineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDisciplineApp.swift; sourceTree = "<group>"; };
 		C8A1DDE22927838C00FA983B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -32,7 +38,7 @@
 		C8FCDAB0293F60C1008AFFDB /* NewTaskObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskObjectView.swift; sourceTree = "<group>"; };
 		C8FCDAB2293F60DB008AFFDB /* PickerFrequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerFrequency.swift; sourceTree = "<group>"; };
 		C8FCDAB4293F60EF008AFFDB /* CategoryToImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryToImage.swift; sourceTree = "<group>"; };
-		C8FCDAB6293F6112008AFFDB /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		C8FCDAB6293F6112008AFFDB /* CoreDataManagerTaskObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerTaskObject.swift; sourceTree = "<group>"; };
 		C8FCDAB8293F6144008AFFDB /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		C8FCDABB293F6211008AFFDB /* CoreDataContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataContainer.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -52,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				C8FCDAAA293F6022008AFFDB /* ContentView.swift */,
+				C86BAC44293F853F007E76DA /* ContentViewSubViews */,
 				C86BAC3D293F78B7007E76DA /* ProfileView.swift */,
 				C8FCDAB0293F60C1008AFFDB /* NewTaskObjectView.swift */,
 				C86BAC3A293F73B9007E76DA /* SubViews */,
@@ -72,7 +79,8 @@
 			children = (
 				C8FCDABA293F6211008AFFDB /* CoreDataContainer.xcdatamodeld */,
 				C8FCDAAE293F60A0008AFFDB /* Persistance.swift */,
-				C8FCDAB6293F6112008AFFDB /* CoreDataManager.swift */,
+				C8FCDAB6293F6112008AFFDB /* CoreDataManagerTaskObject.swift */,
+				C86BAC41293F80DD007E76DA /* CoreDataManagerUserLevel.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -82,9 +90,18 @@
 			children = (
 				C8FCDAB4293F60EF008AFFDB /* CategoryToImage.swift */,
 				C8FCDAB8293F6144008AFFDB /* ViewModel.swift */,
+				C86BAC3F293F8004007E76DA /* UserLevelViewModel.swift */,
 				C86BAC3B293F73C9007E76DA /* CoreData */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		C86BAC44293F853F007E76DA /* ContentViewSubViews */ = {
+			isa = PBXGroup;
+			children = (
+				C86BAC45293F8577007E76DA /* DateView.swift */,
+			);
+			path = ContentViewSubViews;
 			sourceTree = "<group>";
 		};
 		C8A1DDD22927838B00FA983B = {
@@ -194,13 +211,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8FCDAB3293F60DB008AFFDB /* PickerFrequency.swift in Sources */,
+				C86BAC40293F8004007E76DA /* UserLevelViewModel.swift in Sources */,
+				C86BAC42293F80DD007E76DA /* CoreDataManagerUserLevel.swift in Sources */,
 				C8FCDAAB293F6022008AFFDB /* ContentView.swift in Sources */,
+				C86BAC46293F8577007E76DA /* DateView.swift in Sources */,
 				C86BAC3E293F78B7007E76DA /* ProfileView.swift in Sources */,
 				C8FCDAB1293F60C1008AFFDB /* NewTaskObjectView.swift in Sources */,
 				C8FCDAB9293F6144008AFFDB /* ViewModel.swift in Sources */,
 				C8FCDAB5293F60EF008AFFDB /* CategoryToImage.swift in Sources */,
 				C8FCDAAF293F60A0008AFFDB /* Persistance.swift in Sources */,
-				C8FCDAB7293F6112008AFFDB /* CoreDataManager.swift in Sources */,
+				C8FCDAB7293F6112008AFFDB /* CoreDataManagerTaskObject.swift in Sources */,
 				C8FCDABC293F6211008AFFDB /* CoreDataContainer.xcdatamodeld in Sources */,
 				C8A1DDDF2927838B00FA983B /* DailyDisciplineApp.swift in Sources */,
 			);

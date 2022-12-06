@@ -10,7 +10,7 @@ import SwiftUI
 struct NewTaskObjectView: View {
     
     @Environment(\.dismiss) private var dismiss
-    var coreDataManager = CoreDataManager.shared
+    var coreDataManager = CoreDataManagerTaskObject.shared
     @State var taskObjectText: String = ""
     @State var selectedPriority: FrequencyPicker = .daily
     @State var selectedCategory = "Fitness"

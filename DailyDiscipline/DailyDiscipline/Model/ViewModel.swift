@@ -11,7 +11,7 @@ import Combine
 
 class ViewModel: ObservableObject{
     @Published var dataArr: [TaskObject] = []
-    private var manager = CoreDataManager.shared
+    private var manager = CoreDataManagerTaskObject.shared
     private var cancellables = Set<AnyCancellable>()
     
     init(){
