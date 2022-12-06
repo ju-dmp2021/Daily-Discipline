@@ -2,7 +2,7 @@
 //  PickerFrequency.swift
 //  DailyDiscipline
 //
-//  Created by Ludvig Krantzén on 2022-11-30.
+//  Created by Ludvig Krantzén on 2022-12-06.
 //
 
 import SwiftUI
@@ -36,17 +36,16 @@ struct PickerFrequency: View {
     @Binding var selectedFrequency: FrequencyPicker
     
     var body: some View {
-        
-            Picker("Frequency", selection: $selectedFrequency) {
-                ForEach(FrequencyPicker.allCases) { frequency in
-                    Text(frequency.title).tag(frequency)
-                }
+            
+        Picker("Frequency", selection: $selectedFrequency) {
+            ForEach(FrequencyPicker.allCases) { frequency in
+                Text(frequency.title).tag(frequency)
             }
-            .pickerStyle(.segmented)
-            .frame(height: 40)
-            .background(.red)
-            .cornerRadius(10)
-
+        }
+        .pickerStyle(.segmented)
+        .padding(.horizontal, 30)
+        .cornerRadius(10)
+        
     }
 }
 
@@ -56,4 +55,3 @@ struct PickerFrequency_Previews: PreviewProvider {
         PickerFrequency(selectedFrequency: $selectedFrequency)
     }
 }
-

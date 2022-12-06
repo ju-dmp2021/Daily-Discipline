@@ -8,24 +8,13 @@
 import SwiftUI
 
 @main
-
 struct DailyDisciplineApp: App {
-    
-    init() {
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor : UIColor.red]
-    }
+    let persistenceController = PersistenceController.shared
     
     var body: some Scene {
         WindowGroup {
-            ZStack {
-                CoreDataRelationships()
-                
-                GeometryReader { reader in
-                    Color("NavbarTopBlue")
-                        .frame(height: reader.safeAreaInsets.top, alignment: .top)
-                        .ignoresSafeArea()
-                }
-            }
+            ContentView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
