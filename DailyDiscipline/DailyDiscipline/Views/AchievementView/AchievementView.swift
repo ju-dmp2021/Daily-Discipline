@@ -10,10 +10,22 @@ import SwiftUI
 struct AchievementView: View {
     
     @Environment(\.dismiss) private var dismiss
-    let achievements = [
-           Title(title: "Level 2", isAchieved: true, category: "Progress", description: "Reach level 2"),
-           Title(title: "Level 3", isAchieved: false, category: "Progress", description: "Reach level 3")
-           ]
+    
+    var userLevelManager = CoreDataManagerUserLevel.shared
+    @StateObject var userLevelViewModel = CoreDataManagerUserLevel()
+    
+    var achievements = [
+        Achievement(title: "Level 1", category: "Progress", description: "Reach level 1", level: 1),
+        Achievement(title: "Level 2", category: "Progress", description: "Reach level 2", level: 2),
+        Achievement(title: "Level 3", category: "Progress", description: "Reach level 3", level: 3),
+        Achievement(title: "Level 4", category: "Progress", description: "Reach level 4", level: 4),
+        Achievement(title: "Level 5", category: "Progress", description: "Reach level 5", level: 5),
+        Achievement(title: "Level 6", category: "Progress", description: "Reach level 6", level: 6),
+        Achievement(title: "Level 7", category: "Progress", description: "Reach level 7", level: 7),
+        Achievement(title: "Level 8", category: "Progress", description: "Reach level 8", level: 8),
+        Achievement(title: "Level 9", category: "Progress", description: "Reach level 9", level: 9),
+        Achievement(title: "Level 10", category: "Progress", description: "Reach level 10", level: 10)
+    ]
     
     init() {
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
@@ -37,7 +49,7 @@ struct AchievementView: View {
                             ForEach(achievements) { achievement in
                                 
                                 ZStack{
-                                    if achievement.isAchieved == false{
+                                    if !(achievement.level <= userLevelViewModel.getCalculatedLevel()) {
                                         Text("LOCKED")
                                             .foregroundColor(.white)
                                             .font(.system(size: 50))
@@ -68,7 +80,7 @@ struct AchievementView: View {
                                         .opacity(0.5)
                                         
                                     )
-                                    .opacity(achievement.isAchieved ? 1 : 0.3)
+                                    .opacity((achievement.level <= userLevelViewModel.getCalculatedLevel()) ? 1 : 0.3)
                                     
                                 }
                                 
@@ -93,7 +105,7 @@ struct AchievementView: View {
                 .foregroundColor(.white)
                 .accentColor(.white)
             }
-    }
+       }
    }
 }
 
@@ -103,19 +115,10 @@ struct AchievementView_Previews: PreviewProvider {
     }
 }
 
-struct Title: Identifiable {
-    let id: String
+struct Achievement: Identifiable {
+    let id = UUID()
     let title: String
-    let isAchieved:Bool
     let category: String
     let description: String
-    
-    
-    init(id: String = UUID().uuidString, title: String, isAchieved: Bool, category: String, description: String) {
-        self.id = id
-        self.title = title
-        self.isAchieved = isAchieved
-        self.category = category
-        self.description = description
-    }
+    let level: Int
 }

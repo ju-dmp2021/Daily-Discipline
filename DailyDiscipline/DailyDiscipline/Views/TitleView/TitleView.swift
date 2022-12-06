@@ -10,9 +10,9 @@ import SwiftUI
 struct TitleView: View {
     
     @Environment(\.dismiss) private var dismiss
-    let achievements = [
-           Achievement(title: "Level 2", isAchieved: true, category: "Progress", description: "Reach level 2"),
-           Achievement(title: "Level 3", isAchieved: false, category: "Progress", description: "Reach level 3")
+    let titles = [
+           Title(title: "Level 2", isAchieved: true, category: "Progress", description: "Reach level 2"),
+           Title(title: "Level 3", isAchieved: false, category: "Progress", description: "Reach level 3")
            ]
     
     init() {
@@ -28,13 +28,13 @@ struct TitleView: View {
                     .scaledToFill()
                     .edgesIgnoringSafeArea(.all)
                 VStack{
-                    Text("Achievements!")
+                    Text("Titles!")
                         .foregroundColor(.white)
                         .font(.largeTitle)
                     
                     ScrollView(.vertical) {
                         VStack(spacing: 20) {
-                            ForEach(achievements) { achievement in
+                            ForEach(titles) { achievement in
                                 
                                 ZStack{
                                     if achievement.isAchieved == false{
@@ -103,7 +103,7 @@ struct TitleView_Previews: PreviewProvider {
     }
 }
 
-struct Achievement: Identifiable {
+struct Title: Identifiable {
     let id: String
     let title: String
     let isAchieved:Bool
