@@ -32,20 +32,20 @@ class TaskObjectViewModel: ObservableObject{
     }
     
     func getWeeklyData(){
-        manager.$dailyTaskObjects
+        manager.$weeklyTaskObjects
             .receive(on: DispatchQueue.main)
             .sink { data in
-                self.manager.fetchDailyTaskObjects()
-                self.dailyArray = data
+                self.manager.fetchWeeklyTaskObjects()
+                self.weeklyArray = data
             }.store(in: &cancellables)
     }
     
     func getMonthlyData(){
-        manager.$dailyTaskObjects
+        manager.$monthlyTaskObjects
             .receive(on: DispatchQueue.main)
             .sink { data in
-                self.manager.fetchDailyTaskObjects()
-                self.dailyArray = data
+                self.manager.fetchMonthlyTaskObjects()
+                self.monthlyArray = data
             }.store(in: &cancellables)
     }
 }

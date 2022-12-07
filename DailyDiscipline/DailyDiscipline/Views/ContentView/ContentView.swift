@@ -41,36 +41,33 @@ struct ContentView: View {
                     
                     PickerFrequency(selectedFrequency: $selectedPriority)
                     
-                   // selectedPriority.rawValue == "Weekly" ? taskObjectViewModel.weeklyArray : selectedPriority.rawValue == "Monthly" ? taskObjectViewModel.monthlyArray : []
-                    if taskObjectViewModel.dailyArray.count != 0 {
-                        List {
-                            ForEach(selectedPriority.rawValue == "Daily" ? taskObjectViewModel.dailyArray : []) { task in
-                                HStack {
-                                    Button {
-                                        task.isComplete.toggle()
-                                        userLevelViewModel.addUserExperience(points: task.points)
-                                    } label: {
-                                        if task.isComplete == true {
-                                            Image(systemName: "circle.fill")
-                                        } else {
-                                            Image(systemName: "circle")
-                                        }
+
+                    List {
+                        ForEach(selectedPriority.rawValue == "Daily" ? taskObjectViewModel.dailyArray : selectedPriority.rawValue == "Weekly" ? taskObjectViewModel.weeklyArray : selectedPriority.rawValue == "Monthly" ? taskObjectViewModel.monthlyArray : []) { task in
+                            HStack {
+                                Button {
+                                    task.isComplete.toggle()
+                                    userLevelViewModel.addUserExperience(points: task.points)
+                                } label: {
+                                    if task.isComplete == true {
+                                        Image(systemName: "circle.fill")
+                                    } else {
+                                        Image(systemName: "circle")
                                     }
-                                    Text(task.name ?? "No name")
-                                    Text(task.frequency ?? "No frequency")
-                                    Spacer()
-                                    Image(systemName:categoryToImage.getCategoryImage(category: task.category ?? ""))
                                 }
+                                Text(task.name ?? "No name")
+                                Spacer()
+                                Image(systemName:categoryToImage.getCategoryImage(category: task.category ?? ""))
                             }
-                            .onDelete { indexSet in
-                                taskObjectManager.deleteTaskObject(indexSet: indexSet, frequency: selectedPriority.rawValue)
-                            }
-                            
-                           // .onDelete(perform: taskObjectManager.deleteTaskObject(indexSet: , frequency: selectedPriority.rawValue))
-                            .listRowBackground(Color.clear)
                         }
-                        .scrollContentBackground(.hidden)
-                    } 
+                        .onDelete { indexSet in
+                            taskObjectManager.deleteTaskObject(indexSet: indexSet, frequency: selectedPriority.rawValue)
+                        }
+                        .listRowBackground(Color.clear)
+                    }
+                    .opacity(selectedPriority.rawValue == "Daily" && taskObjectViewModel.dailyArray.count != 0 ? 1 : selectedPriority.rawValue == "Weekly" && taskObjectViewModel.weeklyArray.count != 0 ? 1 : selectedPriority.rawValue == "Monthly" && taskObjectViewModel.monthlyArray.count != 0 ? 1 : 0)
+                    .scrollContentBackground(.hidden)
+                
                     Spacer()
                     HStack {
                         Spacer()
