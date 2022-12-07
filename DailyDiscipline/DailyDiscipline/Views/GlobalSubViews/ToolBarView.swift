@@ -11,6 +11,7 @@ struct ToolBarView: ViewModifier {
     
     var leftButton: String = ""
     var rightButton: String = ""
+    var bgColor: Color = .white
     @Environment(\.dismiss) private var dismiss
     
     func body(content: Content) -> some View {
@@ -41,17 +42,19 @@ struct ToolBarView: ViewModifier {
                     }
                 }
             }
-        .navigationTitle("Daily Discipline")
-        .navigationBarTitleDisplayMode(.inline)
+            .foregroundColor(bgColor == .white ? .black : .white)
+            .navigationBarBackButtonHidden(true)
+            .navigationTitle("Daily Discipline")
+            .navigationBarTitleDisplayMode(.inline)
     }
 }
 
 extension View {
-    func toolBarViewOneButton(leftButton: String) -> some View {
-        modifier(ToolBarView(leftButton: leftButton))
+    func toolBarViewOneButton(leftButton: String, bgColor: Color) -> some View {
+        modifier(ToolBarView(leftButton: leftButton, bgColor: bgColor))
     }
     
-    func toolBarViewTwoButtons(leftButton: String, rightButton: String) -> some View {
-        modifier(ToolBarView(leftButton: leftButton, rightButton: rightButton))
+    func toolBarViewTwoButtons(leftButton: String, rightButton: String, bgColor: Color) -> some View {
+        modifier(ToolBarView(leftButton: leftButton, rightButton: rightButton, bgColor: bgColor))
     }
 }

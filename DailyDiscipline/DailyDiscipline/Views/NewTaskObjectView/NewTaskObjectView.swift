@@ -15,52 +15,12 @@ struct NewTaskObjectView: View {
     @State var selectedPriority: FrequencyPicker = .daily
     @State var selectedCategory = "Fitness"
     
-    @State var selectedPresetCategory = "Test"
+    @State var selectedPresetCategory = ""
     @State var showPresetTasks = false
     @State var showPresetTasksCategories = false
     @State var selectedPresetItem = "Go to the gym"
     
     @State var categoryToImage = CategoryToImage()
-    
-    
-    let presetTasks: [TaskTemplate] = [
-    TaskTemplate(name: "Go to the gym", category: "Fitness"),
-    TaskTemplate(name: "Do Yoga", category: "Fitness"),
-    TaskTemplate(name: "Stretch", category: "Fitness"),
-    TaskTemplate(name: "Go for a run", category: "Fitness"),
-    TaskTemplate(name: "Go for a walk", category: "Fitness"),
-    TaskTemplate(name: "Do body weight exersices", category: "Fitness"),
-    TaskTemplate(name: "Buy Groceries", category: "Chores"),
-    TaskTemplate(name: "Clean the apartment", category: "Chores"),
-    TaskTemplate(name: "Clean your room", category: "Chores"),
-    TaskTemplate(name: "Clean the house", category: "Chores"),
-    TaskTemplate(name: "Do the laundry", category: "Chores"),
-    TaskTemplate(name: "Wash the car", category: "Chores"),
-    TaskTemplate(name: "Take out the trash", category: "Chores"),
-    TaskTemplate(name: "Pay the bills", category: "Chores"),
-    TaskTemplate(name: "Walk the dog", category: "Health"),
-    TaskTemplate(name: "Go for a walk", category: "Health"),
-    TaskTemplate(name: "Call someone important", category: "Health"),
-    TaskTemplate(name: "Write in your gratitude journal", category: "Health"),
-    TaskTemplate(name: "Meditate", category: "Health"),
-    TaskTemplate(name: "Eat a fruit", category: "Health"),
-    TaskTemplate(name: "Cook a meal", category: "Cooking"),
-    TaskTemplate(name: "Meal prep", category: "Cooking"),
-    TaskTemplate(name: "Bake bread", category: "Cooking"),
-    TaskTemplate(name: "Make dessert", category: "Cooking"),
-    TaskTemplate(name: "Read", category: "Study"),
-    TaskTemplate(name: "Study one hour", category: "Study"),
-    TaskTemplate(name: "Study for a test", category: "Study"),
-    TaskTemplate(name: "Go to School", category: "Study"),
-    TaskTemplate(name: "Watch a movie", category: "Recreational"),
-    TaskTemplate(name: "Watch an episode of a show", category: "Recreational"),
-    TaskTemplate(name: "Play a video game", category: "Recreational"),
-    TaskTemplate(name: "Play a board game", category: "Recreational"),
-    TaskTemplate(name: "Listen to music", category: "Recreational"),
-    TaskTemplate(name: "Play music", category: "Recreational"),
-    ]
-
-    let categories = ["Fitness", "Chores", "Cooking", "Study", "Recreational"]
     
     init(){
         UISegmentedControl.appearance().selectedSegmentTintColor = .white
@@ -73,114 +33,26 @@ struct NewTaskObjectView: View {
     var body: some View {
         NavigationStack {
             ZStack(alignment: .top) {
-                Image("bgBlack")
-                    .resizable()
-                    .scaledToFill()
-                    .edgesIgnoringSafeArea(.all)
+                BackgroundImageView(color: .black)
                 VStack(spacing: 20) {
                     PickerFrequency(selectedFrequency: $selectedPriority)
                     if !showPresetTasksCategories {
-                        HStack {
-                            TextField("Add taskobject here...", text: $taskObjectText)
-                            
-                            Picker("", selection: $selectedCategory) {
-                                ForEach(categories, id: \.self) {
-                                    Text($0)
-                                        
-                                }
-                                
-                            }
-                            .tint(.black)
-                        }
-                        .font(.headline)
-                        .padding(.leading)
-                        .frame(height: 55)
-                        .background(.white)
-                        .foregroundColor(.black)
-                        .cornerRadius(10)
-                        .padding(.horizontal, 30)
+                        TextFieldView(taskObjectText: $taskObjectText, selectedCategory: $selectedCategory)
                     }
-                    
-                    
-                    
                     if showPresetTasksCategories {
-                        ScrollView(.horizontal, showsIndicators: true, content: {
-                            HStack(spacing: 14) {
-                                ForEach(categories, id: \.self) { category in
-                                    Button {
-                                        showPresetTasks = true
-                                        selectedPresetCategory = category
-                                    } label: {
-                                        VStack{
-                                            Text(category)
-                                            Image(systemName: "\(categoryToImage.getCategoryImage(category: category))")
-                                                .resizable()
-                                                .scaledToFit()
-                                                .frame(height: 70)
-                                        }
-                                        .frame(width:130, height: 130)
-                                        .overlay(RoundedRectangle(cornerRadius: 10)
-                                            .stroke(.white, lineWidth: 2))
-                                    }
-                                }
-                            }
-                            .padding(.leading)
-                        })
+                        PresetCategoryView(showPresetTasks: $showPresetTasks, selectedPresetCategory: $selectedPresetCategory)
                     }
                     
                     if showPresetTasks {
-                        Picker("", selection: $selectedPresetItem) {
-                            ForEach(presetTasks) { task in
-                                if task.category == selectedPresetCategory{
-                                    Text(task.name)
-                                        .foregroundColor(.white)
-                                        .font(.system(size: 30))
-                                        .tag(task.name)
-                                }
-                            }
-                        }
-                        .pickerStyle(.wheel)
+                        PresetTasksView(selectedPresetCategory: $selectedPresetCategory, selectedPresetItem: $selectedPresetItem)
                     }
                     
                     Spacer()
-                    Button {
-                        showPresetTasksCategories.toggle()
-                        showPresetTasks = false
-                    } label: {
-                        Text("Choose a preset category!")
-                    }
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .frame(height: 55)
-                    .frame(maxWidth: .infinity)
-                    .overlay(
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(.white, lineWidth: 4)
-                        )
-                    .cornerRadius(10)
-                    .padding(.horizontal, 30)
-                    Button {
-                        if showPresetTasks {
-                            coreDataManager.addPresetTaskObject(name: selectedPresetItem, category: selectedPresetCategory, frequency: selectedPriority.rawValue)
-                        } else if !showPresetTasksCategories {
-                            guard !taskObjectText.isEmpty else { return }
-                            coreDataManager.addTaskObject(name: taskObjectText, category: selectedCategory, frequency: selectedPriority.rawValue)
-                        } else { return }
-                        dismiss()
-                    } label: {
-                        Text("Submit")
-                            .font(.headline)
-                            .foregroundColor(.black)
-                            .frame(height: 55)
-                            .frame(maxWidth: .infinity)
-                            .background(.white)
-                            .cornerRadius(10)
-                        
-                    }
-                    .padding(.horizontal, 30)
+                    ChoosePresetCategoryButton(showPresetTasks: $showPresetTasks, showPresetTasksCategories: $showPresetTasksCategories)
+                    SubmitButton(showPresetTasks: $showPresetTasks, showPresetTasksCategories: $showPresetTasksCategories, selectedPriority: $selectedPriority, selectedCategory: $selectedCategory, selectedPresetItem: $selectedPresetItem, selectedPresetCategory: $selectedPresetCategory, taskObjectText: $taskObjectText)
                 }
                 .padding(.top)
-                .toolBarViewOneButton(leftButton: "backButton")
+                .toolBarViewOneButton(leftButton: "backButton", bgColor: .black)
                 .foregroundColor(.white)
                 .accentColor(.white)
             }
@@ -192,12 +64,4 @@ struct NewTaskObjectView_Previews: PreviewProvider {
     static var previews: some View {
         NewTaskObjectView()
     }
-}
-
-
-struct TaskTemplate: Identifiable {
-    var id = UUID()
-    
-    var name: String
-    var category: String
 }

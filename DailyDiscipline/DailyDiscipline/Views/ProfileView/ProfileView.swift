@@ -20,10 +20,7 @@ struct ProfileView: View {
     var body: some View {
         NavigationStack {
             ZStack(alignment: .top) {
-                Image("bg")
-                    .resizable()
-                    .scaledToFill()
-                    .edgesIgnoringSafeArea(.all)
+                BackgroundImageView(color: .white)
                 VStack {
                     Image(systemName: "person.crop.circle")
                         .resizable()
@@ -39,19 +36,7 @@ struct ProfileView: View {
                         .padding(.top, 60)
                 }
                 .foregroundColor(.black)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button {
-                            dismiss()
-                        } label: {
-                            Image(systemName: "chevron.left")
-                                .foregroundColor(.black)
-                        }
-                    }
-                }
-                .navigationTitle("Daily Discipline")
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationBarBackButtonHidden(true)
+                .toolBarViewOneButton(leftButton: "backButton", bgColor: .white)
                 .foregroundColor(.white)
                 .accentColor(.white)
                 .sheet(isPresented: $showAchievementView) {

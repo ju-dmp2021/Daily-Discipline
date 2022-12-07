@@ -10,10 +10,8 @@ import SwiftUI
 struct TitleView: View {
     
     @Environment(\.dismiss) private var dismiss
-    let titles = [
-           Title(title: "Level 2", isAchieved: true, category: "Progress", description: "Reach level 2"),
-           Title(title: "Level 3", isAchieved: false, category: "Progress", description: "Reach level 3")
-           ]
+    
+    @State var storedData = StoredData()
     
     init() {
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
@@ -22,100 +20,29 @@ struct TitleView: View {
     var body: some View {
         NavigationStack {
             ZStack(alignment: .top){
-                
-                Image("bgBlack")
-                    .resizable()
-                    .scaledToFill()
-                    .edgesIgnoringSafeArea(.all)
+                BackgroundImageView(color: .black)
                 VStack{
                     Text("Titles!")
                         .foregroundColor(.white)
                         .font(.largeTitle)
-                    
                     ScrollView(.vertical) {
                         VStack(spacing: 20) {
-                            ForEach(titles) { achievement in
-                                
-                                ZStack{
-                                    if achievement.isAchieved == false{
-                                        Text("LOCKED")
-                                            .foregroundColor(.white)
-                                            .font(.system(size: 50))
-                                            .rotationEffect(.degrees(-30))
-                                            .opacity(0.9)
-                                    }
-                                    VStack{
-                                        Text(achievement.title)
-                                        Text(achievement.category)
-                                        Text(achievement.description)
-                                            .font(.subheadline)
-                                    }
-                                    
-                                    .foregroundColor(.white)
-                                    .font(.largeTitle)
-                                    .frame(width: 300, height: 150)
-                                    .overlay(RoundedRectangle(cornerRadius: 20)
-                                        .stroke(.white, lineWidth: 3))
-                                    .background(
-                                        
-                                        LinearGradient(
-                                            colors: [.white, .black, .white],
-                                            startPoint: .topLeading,
-                                            endPoint: .bottomTrailing
-                                        )
-                                        .cornerRadius(20)
-                                        
-                                        .opacity(0.5)
-                                        
-                                    )
-                                    .opacity(achievement.isAchieved ? 1 : 0.3)
-                                    
-                                }
-                                
+                            ForEach(storedData.titles) { title in
+                                TitleListView(title: title)
                             }
-                            
                         }
                     }
                 }
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button {
-                            dismiss()
-                        } label: {
-                            Image(systemName: "chevron.left")
-                                .foregroundColor(.white)
-                        }
-                    }
-                }
-                .navigationTitle("Daily Discipline")
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationBarBackButtonHidden(true)
+                .toolBarViewOneButton(leftButton: "backButton", bgColor: .black)
                 .foregroundColor(.white)
                 .accentColor(.white)
             }
+        }
     }
-   }
 }
 
 struct TitleView_Previews: PreviewProvider {
     static var previews: some View {
         TitleView()
-    }
-}
-
-struct Title: Identifiable {
-    let id: String
-    let title: String
-    let isAchieved:Bool
-    let category: String
-    let description: String
-    
-    
-    init(id: String = UUID().uuidString, title: String, isAchieved: Bool, category: String, description: String) {
-        self.id = id
-        self.title = title
-        self.isAchieved = isAchieved
-        self.category = category
-        self.description = description
     }
 }
