@@ -12,12 +12,12 @@ struct PresetCategoryView: View {
     @Binding var showPresetTasks: Bool
     @Binding var selectedPresetCategory: String
     @State var categoryToImage = CategoryToImage()
-    @State var storedTasksAndCategories = StoredData()
+    @State var storedData = StoredData()
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: true, content: {
             HStack(spacing: 14) {
-                ForEach(storedTasksAndCategories.categories, id: \.self) { category in
+                ForEach(storedData.categories, id: \.self) { category in
                     Button {
                         showPresetTasks = true
                         selectedPresetCategory = category

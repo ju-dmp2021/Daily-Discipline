@@ -24,6 +24,10 @@ struct CategoryToImage {
         return "book"
         case "Recreational":
         return "face.smiling"
+        case "Busywork":
+        return "house"
+        case "Relaxation":
+        return "sparkles.tv"
         default:
         return "questionmark.app"
         }

@@ -16,9 +16,12 @@ struct NewTaskObjectView: View {
     @State var selectedCategory = "Fitness"
     
     @State var selectedPresetCategory = ""
+    @State var selectedApiCategory = ""
     @State var showPresetTasks = false
     @State var showPresetTasksCategories = false
+    @State var showRandomTasksCategories = false
     @State var selectedPresetItem = "Go to the gym"
+    @State var randomTaskText = "Choose a category"
     
     @State var categoryToImage = CategoryToImage()
     
@@ -36,20 +39,24 @@ struct NewTaskObjectView: View {
                 BackgroundImageView(color: .black)
                 VStack(spacing: 20) {
                     PickerFrequency(selectedFrequency: $selectedPriority)
-                    if !showPresetTasksCategories {
+                    if !showPresetTasksCategories && !showRandomTasksCategories {
                         TextFieldView(taskObjectText: $taskObjectText, selectedCategory: $selectedCategory)
                     }
                     if showPresetTasksCategories {
                         PresetCategoryView(showPresetTasks: $showPresetTasks, selectedPresetCategory: $selectedPresetCategory)
                     }
                     
+                    if showRandomTasksCategories {
+                        ApiCategoryView(randomTaskText: $randomTaskText)
+                    }
+                    
                     if showPresetTasks {
                         PresetTasksView(selectedPresetCategory: $selectedPresetCategory, selectedPresetItem: $selectedPresetItem)
                     }
-                    
                     Spacer()
-                    ChoosePresetCategoryButton(showPresetTasks: $showPresetTasks, showPresetTasksCategories: $showPresetTasksCategories)
-                    SubmitButton(showPresetTasks: $showPresetTasks, showPresetTasksCategories: $showPresetTasksCategories, selectedPriority: $selectedPriority, selectedCategory: $selectedCategory, selectedPresetItem: $selectedPresetItem, selectedPresetCategory: $selectedPresetCategory, taskObjectText: $taskObjectText)
+                    ChoosePresetCategoryButton(showPresetTasks: $showPresetTasks, showPresetTasksCategories: $showPresetTasksCategories, showRandomTasksCategories: $showRandomTasksCategories)
+                    GetRandomTaskButton(showPresetTasksCategories: $showPresetTasksCategories, showRandomTasksCategories: $showRandomTasksCategories, showPresetTasks: $showPresetTasks)
+                    SubmitButton(showPresetTasks: $showPresetTasks, showPresetTasksCategories: $showPresetTasksCategories, selectedPriority: $selectedPriority, selectedCategory: $selectedCategory, selectedPresetItem: $selectedPresetItem, selectedPresetCategory: $selectedPresetCategory, taskObjectText: $taskObjectText, showRandomTasksCategories: $showRandomTasksCategories, randomTaskText: $randomTaskText, selectedApiCategory: $selectedApiCategory)
                 }
                 .padding(.top)
                 .toolBarViewOneButton(leftButton: "backButton", bgColor: .black)

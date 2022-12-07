@@ -18,6 +18,9 @@ struct SubmitButton: View {
     @Binding var selectedPresetItem: String
     @Binding var selectedPresetCategory: String
     @Binding var taskObjectText: String
+    @Binding var showRandomTasksCategories: Bool
+    @Binding var randomTaskText: String
+    @Binding var selectedApiCategory: String
     
     var coreDataManager = CoreDataManagerTaskObject.shared
     
@@ -25,6 +28,8 @@ struct SubmitButton: View {
         Button {
             if showPresetTasks {
                 coreDataManager.addPresetTaskObject(name: selectedPresetItem, category: selectedPresetCategory, frequency: selectedPriority.rawValue)
+            } else if showRandomTasksCategories {
+                coreDataManager.addTaskObject(name: randomTaskText, category: selectedApiCategory, frequency: selectedPriority.rawValue)
             } else if !showPresetTasksCategories {
                 guard !taskObjectText.isEmpty else { return }
                 coreDataManager.addTaskObject(name: taskObjectText, category: selectedCategory, frequency: selectedPriority.rawValue)

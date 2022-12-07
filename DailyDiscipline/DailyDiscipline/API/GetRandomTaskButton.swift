@@ -1,5 +1,5 @@
 //
-//  ChoosePresetCategoryButton.swift
+//  File.swift
 //  DailyDiscipline
 //
 //  Created by Ludvig Krantzén on 2022-12-07.
@@ -7,19 +7,19 @@
 
 import SwiftUI
 
-struct ChoosePresetCategoryButton: View {
+struct GetRandomTaskButton: View {
     
-    @Binding var showPresetTasks: Bool
     @Binding var showPresetTasksCategories: Bool
     @Binding var showRandomTasksCategories: Bool
-    
+    @Binding var showPresetTasks: Bool
+
     var body: some View {
         Button {
-            showPresetTasksCategories.toggle()
+            showRandomTasksCategories.toggle()
+            showPresetTasksCategories = false
             showPresetTasks = false
-            showRandomTasksCategories = false
         } label: {
-            Text("Choose a preset category!")
+            Text("Get a random task!")
         }
         .font(.headline)
         .foregroundColor(.white)

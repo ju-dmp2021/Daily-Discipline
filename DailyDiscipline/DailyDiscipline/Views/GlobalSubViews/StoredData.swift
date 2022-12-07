@@ -46,8 +46,6 @@ class StoredData {
     TaskTemplate(name: "Play music", category: "Recreational"),
     ]
     
-    let categories = ["Fitness", "Chores", "Cooking", "Study", "Recreational"]
-    
     let achievements = [
         Achievement(title: "Level 1", category: "Progress", description: "Reach level 1", level: 1),
         Achievement(title: "Level 2", category: "Progress", description: "Reach level 2", level: 2),
@@ -62,9 +60,13 @@ class StoredData {
     ]
     
     let titles = [
-           Title(title: "Level 2", isAchieved: true, category: "Progress", description: "Reach level 2"),
-           Title(title: "Level 3", isAchieved: false, category: "Progress", description: "Reach level 3")
-           ]
+       Title(title: "Level 2", isAchieved: true, category: "Progress", description: "Reach level 2"),
+       Title(title: "Level 3", isAchieved: false, category: "Progress", description: "Reach level 3")
+    ]
+    
+    let categories = ["Fitness", "Chores", "Cooking", "Study", "Recreational"]
+    
+    let randomTaskCategories = ["Busywork", "Cooking","Relaxation", "Recreational", "Random"]
 }
 
 struct TaskTemplate: Identifiable {

@@ -31,6 +31,9 @@
 		C8A7B62629412613008016D6 /* PresetCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A7B62529412613008016D6 /* PresetCategoryView.swift */; };
 		C8A7B62929412CD7008016D6 /* AchievementListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A7B62829412CD7008016D6 /* AchievementListView.swift */; };
 		C8A7B62C29412F6B008016D6 /* TitleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A7B62B29412F6B008016D6 /* TitleListView.swift */; };
+		C8A7B62F2941365E008016D6 /* ApiDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A7B62E2941365E008016D6 /* ApiDataModel.swift */; };
+		C8A7B6312941506E008016D6 /* ApiCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A7B6302941506E008016D6 /* ApiCategoryView.swift */; };
+		C8A7B633294150A5008016D6 /* GetRandomTaskButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A7B632294150A5008016D6 /* GetRandomTaskButton.swift */; };
 		C8FCDAAB293F6022008AFFDB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FCDAAA293F6022008AFFDB /* ContentView.swift */; };
 		C8FCDAAF293F60A0008AFFDB /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FCDAAE293F60A0008AFFDB /* Persistance.swift */; };
 		C8FCDAB1293F60C1008AFFDB /* NewTaskObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FCDAB0293F60C1008AFFDB /* NewTaskObjectView.swift */; };
@@ -67,6 +70,9 @@
 		C8A7B62529412613008016D6 /* PresetCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetCategoryView.swift; sourceTree = "<group>"; };
 		C8A7B62829412CD7008016D6 /* AchievementListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementListView.swift; sourceTree = "<group>"; };
 		C8A7B62B29412F6B008016D6 /* TitleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleListView.swift; sourceTree = "<group>"; };
+		C8A7B62E2941365E008016D6 /* ApiDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiDataModel.swift; sourceTree = "<group>"; };
+		C8A7B6302941506E008016D6 /* ApiCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiCategoryView.swift; sourceTree = "<group>"; };
+		C8A7B632294150A5008016D6 /* GetRandomTaskButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRandomTaskButton.swift; sourceTree = "<group>"; };
 		C8FCDAAA293F6022008AFFDB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		C8FCDAAE293F60A0008AFFDB /* Persistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistance.swift; sourceTree = "<group>"; };
 		C8FCDAB0293F60C1008AFFDB /* NewTaskObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskObjectView.swift; sourceTree = "<group>"; };
@@ -218,6 +224,7 @@
 		C8A1DDDD2927838B00FA983B /* DailyDiscipline */ = {
 			isa = PBXGroup;
 			children = (
+				C8A7B62D29413639008016D6 /* API */,
 				C86BAC39293F73B3007E76DA /* Views */,
 				C86BAC3C293F73DD007E76DA /* Model */,
 				C8A1DDDE2927838B00FA983B /* DailyDisciplineApp.swift */,
@@ -261,6 +268,16 @@
 				C8A7B62B29412F6B008016D6 /* TitleListView.swift */,
 			);
 			path = TitleSubViews;
+			sourceTree = "<group>";
+		};
+		C8A7B62D29413639008016D6 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				C8A7B62E2941365E008016D6 /* ApiDataModel.swift */,
+				C8A7B6302941506E008016D6 /* ApiCategoryView.swift */,
+				C8A7B632294150A5008016D6 /* GetRandomTaskButton.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +353,7 @@
 				C8A7B624294125FB008016D6 /* PresetTasksView.swift in Sources */,
 				C8A7B61929411A3F008016D6 /* BackgroundImageView.swift in Sources */,
 				C8FCDAB3293F60DB008AFFDB /* PickerFrequency.swift in Sources */,
+				C8A7B6312941506E008016D6 /* ApiCategoryView.swift in Sources */,
 				C8A7B61529411481008016D6 /* AddNewTaskButton.swift in Sources */,
 				C84F100A2940AA3400778541 /* ToolBarView.swift in Sources */,
 				C86BAC40293F8004007E76DA /* UserLevelViewModel.swift in Sources */,
@@ -353,6 +371,7 @@
 				C8FCDAB5293F60EF008AFFDB /* CategoryToImage.swift in Sources */,
 				C8A7B62C29412F6B008016D6 /* TitleListView.swift in Sources */,
 				C8A7B620294125BB008016D6 /* TextFieldView.swift in Sources */,
+				C8A7B62F2941365E008016D6 /* ApiDataModel.swift in Sources */,
 				C8FCDAAF293F60A0008AFFDB /* Persistance.swift in Sources */,
 				C86BAC51293FA623007E76DA /* TitleView.swift in Sources */,
 				C8A7B6132940EE7E008016D6 /* NewDateModel.swift in Sources */,
@@ -362,6 +381,7 @@
 				C8FCDAB7293F6112008AFFDB /* CoreDataManagerTaskObject.swift in Sources */,
 				C8FCDABC293F6211008AFFDB /* CoreDataContainer.xcdatamodeld in Sources */,
 				C8A1DDDF2927838B00FA983B /* DailyDisciplineApp.swift in Sources */,
+				C8A7B633294150A5008016D6 /* GetRandomTaskButton.swift in Sources */,
 				C8A7B61E29412599008016D6 /* SubmitButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
