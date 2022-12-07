@@ -10,21 +10,42 @@ import Combine
 
 
 class TaskObjectViewModel: ObservableObject{
-    @Published var dataArr: [TaskObject] = []
+    @Published var dailyArray: [TaskObject] = []
+    @Published var weeklyArray: [TaskObject] = []
+    @Published var monthlyArray: [TaskObject] = []
     private var manager = CoreDataManagerTaskObject.shared
     private var cancellables = Set<AnyCancellable>()
     
     init(){
-        getData()
-        print(dataArr)
+        getDailyData()
+        getWeeklyData()
+        getMonthlyData()
     }
     
-    func getData(){
-        manager.$savedTaskObjects
+    func getDailyData(){
+        manager.$dailyTaskObjects
             .receive(on: DispatchQueue.main)
             .sink { data in
-                self.manager.fetchTaskObjects()
-                self.dataArr = data
+                self.manager.fetchDailyTaskObjects()
+                self.dailyArray = data
+            }.store(in: &cancellables)
+    }
+    
+    func getWeeklyData(){
+        manager.$dailyTaskObjects
+            .receive(on: DispatchQueue.main)
+            .sink { data in
+                self.manager.fetchDailyTaskObjects()
+                self.dailyArray = data
+            }.store(in: &cancellables)
+    }
+    
+    func getMonthlyData(){
+        manager.$dailyTaskObjects
+            .receive(on: DispatchQueue.main)
+            .sink { data in
+                self.manager.fetchDailyTaskObjects()
+                self.dailyArray = data
             }.store(in: &cancellables)
     }
 }

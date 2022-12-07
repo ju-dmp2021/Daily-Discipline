@@ -41,9 +41,10 @@ struct ContentView: View {
                     
                     PickerFrequency(selectedFrequency: $selectedPriority)
                     
-                    if taskObjectViewModel.dataArr.count != 0 {
+                   // selectedPriority.rawValue == "Weekly" ? taskObjectViewModel.weeklyArray : selectedPriority.rawValue == "Monthly" ? taskObjectViewModel.monthlyArray : []
+                    if taskObjectViewModel.dailyArray.count != 0 {
                         List {
-                            ForEach(taskObjectViewModel.dataArr) { task in
+                            ForEach(selectedPriority.rawValue == "Daily" ? taskObjectViewModel.dailyArray : []) { task in
                                 HStack {
                                     Button {
                                         task.isComplete.toggle()
@@ -61,11 +62,15 @@ struct ContentView: View {
                                     Image(systemName:categoryToImage.getCategoryImage(category: task.category ?? ""))
                                 }
                             }
-                            .onDelete(perform: taskObjectManager.deleteTaskObject)
+                            .onDelete { indexSet in
+                                taskObjectManager.deleteTaskObject(indexSet: indexSet, frequency: selectedPriority.rawValue)
+                            }
+                            
+                           // .onDelete(perform: taskObjectManager.deleteTaskObject(indexSet: , frequency: selectedPriority.rawValue))
                             .listRowBackground(Color.clear)
                         }
                         .scrollContentBackground(.hidden)
-                    }
+                    } 
                     Spacer()
                     HStack {
                         Spacer()
