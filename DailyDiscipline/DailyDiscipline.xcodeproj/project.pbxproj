@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11EFD5842941101400B6DD55 /* APIDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EFD5832941101400B6DD55 /* APIDataModel.swift */; };
 		C84F100A2940AA3400778541 /* ToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84F10092940AA3400778541 /* ToolBarView.swift */; };
 		C86BAC3E293F78B7007E76DA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86BAC3D293F78B7007E76DA /* ProfileView.swift */; };
 		C86BAC40293F8004007E76DA /* UserLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86BAC3F293F8004007E76DA /* UserLevelViewModel.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11EFD5832941101400B6DD55 /* APIDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataModel.swift; sourceTree = "<group>"; };
 		C84F10092940AA3400778541 /* ToolBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarView.swift; sourceTree = "<group>"; };
 		C86BAC3D293F78B7007E76DA /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		C86BAC3F293F8004007E76DA /* UserLevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLevelViewModel.swift; sourceTree = "<group>"; };
@@ -66,6 +68,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11EFD5822941097100B6DD55 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				11EFD5832941101400B6DD55 /* APIDataModel.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		C86BAC39293F73B3007E76DA /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +199,7 @@
 		C8A1DDDD2927838B00FA983B /* DailyDiscipline */ = {
 			isa = PBXGroup;
 			children = (
+				11EFD5822941097100B6DD55 /* New Group */,
 				C86BAC39293F73B3007E76DA /* Views */,
 				C86BAC3C293F73DD007E76DA /* Model */,
 				C8A1DDDE2927838B00FA983B /* DailyDisciplineApp.swift */,
@@ -282,6 +293,7 @@
 				C86BAC42293F80DD007E76DA /* CoreDataManagerUserLevel.swift in Sources */,
 				C86BAC4B293FA131007E76DA /* LevelBarView.swift in Sources */,
 				C86BAC4F293FA583007E76DA /* AchievementView.swift in Sources */,
+				11EFD5842941101400B6DD55 /* APIDataModel.swift in Sources */,
 				C8FCDAAB293F6022008AFFDB /* ContentView.swift in Sources */,
 				C86BAC46293F8577007E76DA /* DateView.swift in Sources */,
 				C86BAC3E293F78B7007E76DA /* ProfileView.swift in Sources */,

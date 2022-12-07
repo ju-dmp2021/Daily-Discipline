@@ -21,7 +21,10 @@ struct NewTaskObjectView: View {
     @State var selectedPresetItem = "Go to the gym"
     
     @State var categoryToImage = CategoryToImage()
+    @State var randomTaskText = "Choose a category"
     
+    @State var showRandomTasksCategories = false
+    @StateObject var dataModel = DataModel()
     
     let presetTasks: [TaskTemplate] = [
     TaskTemplate(name: "Go to the gym", category: "Fitness"),
@@ -61,6 +64,8 @@ struct NewTaskObjectView: View {
     ]
 
     let categories = ["Fitness", "Chores", "Cooking", "Study", "Recreational"]
+    let randomTaskCategories = ["Busywork", "Cooking","Relaxation", "Recreational", "Random"]
+    
     
     init(){
         UISegmentedControl.appearance().selectedSegmentTintColor = .white
@@ -79,7 +84,7 @@ struct NewTaskObjectView: View {
                     .edgesIgnoringSafeArea(.all)
                 VStack(spacing: 20) {
                     PickerFrequency(selectedFrequency: $selectedPriority)
-                    if !showPresetTasksCategories {
+                    if !showPresetTasksCategories && !showRandomTasksCategories {
                         HStack {
                             TextField("Add taskobject here...", text: $taskObjectText)
                             
@@ -128,6 +133,35 @@ struct NewTaskObjectView: View {
                         })
                     }
                     
+                    if showRandomTasksCategories {
+                        ScrollView(.horizontal, showsIndicators: true, content: {
+                            HStack(spacing: 14) {
+                                ForEach(randomTaskCategories, id: \.self) { category in
+                                    Button {
+                                        dataModel.getTaskFromCategory(type: category)
+                                        
+                                    } label: {
+                                        VStack{
+                                            Text(category)
+                                            Image(systemName: "\(categoryToImage.getCategoryImage(category: category))")
+                                                .resizable()
+                                                .scaledToFit()
+                                                .frame(height: 70)
+                                        }
+                                        .frame(width:130, height: 130)
+                                        .overlay(RoundedRectangle(cornerRadius: 10)
+                                            .stroke(.white, lineWidth: 2))
+                                    }
+                                }
+                            }
+                            .padding(.leading)
+                        })
+                        .onChange(of: dataModel.activity) { newValue in
+                            randomTaskText = dataModel.activity ?? ""
+                                }
+                        Text(randomTaskText)
+                    }
+                    
                     if showPresetTasks {
                         Picker("", selection: $selectedPresetItem) {
                             ForEach(presetTasks) { task in
@@ -145,6 +179,7 @@ struct NewTaskObjectView: View {
                     Spacer()
                     Button {
                         showPresetTasksCategories.toggle()
+                        showRandomTasksCategories = false
                         showPresetTasks = false
                     } label: {
                         Text("Choose a preset category!")
@@ -159,10 +194,31 @@ struct NewTaskObjectView: View {
                         )
                     .cornerRadius(10)
                     .padding(.horizontal, 30)
+                    
+                    Button {
+                        showRandomTasksCategories.toggle()
+                        showPresetTasksCategories = false
+                        showPresetTasks = false
+                    } label: {
+                        Text("Get a random task!")
+                    }
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .frame(height: 55)
+                    .frame(maxWidth: .infinity)
+                    .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(.white, lineWidth: 4)
+                        )
+                    .cornerRadius(10)
+                    .padding(.horizontal, 30)
+                    
                     Button {
                         if showPresetTasks {
                             coreDataManager.addPresetTaskObject(name: selectedPresetItem, category: selectedPresetCategory, frequency: selectedPriority.rawValue)
-                        } else if !showPresetTasksCategories {
+                        } else if showRandomTasksCategories{
+                            coreDataManager.addTaskObject(name: dataModel.activity ?? "Error", category: dataModel.type ?? "Error", frequency: selectedPriority.rawValue)
+                    } else if !showPresetTasksCategories {
                             guard !taskObjectText.isEmpty else { return }
                             coreDataManager.addTaskObject(name: taskObjectText, category: selectedCategory, frequency: selectedPriority.rawValue)
                         } else { return }
