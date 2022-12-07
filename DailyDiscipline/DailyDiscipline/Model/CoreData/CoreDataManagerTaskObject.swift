@@ -15,6 +15,7 @@ class CoreDataManagerTaskObject: ObservableObject {
     
     func fetchTaskObjects() {
         let request = NSFetchRequest<TaskObject>(entityName: "TaskObject")
+        request.sortDescriptors = [NSSortDescriptor(keyPath: \TaskObject.createdAt, ascending: false)]
         
         do {
             savedTaskObjects = try moc.fetch(request)
@@ -30,6 +31,7 @@ class CoreDataManagerTaskObject: ObservableObject {
         newTaskObject.frequency = frequency
         newTaskObject.isComplete = false
         newTaskObject.category = category
+        newTaskObject.createdAt = Date()
         saveData()
     }
     
@@ -40,6 +42,7 @@ class CoreDataManagerTaskObject: ObservableObject {
         newTaskObject.frequency = frequency
         newTaskObject.isComplete = false
         newTaskObject.category = category
+        newTaskObject.createdAt = Date()
         saveData()
     }
     

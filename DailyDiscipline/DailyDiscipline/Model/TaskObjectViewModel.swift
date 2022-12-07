@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 
-class ViewModel: ObservableObject{
+class TaskObjectViewModel: ObservableObject{
     @Published var dataArr: [TaskObject] = []
     private var manager = CoreDataManagerTaskObject.shared
     private var cancellables = Set<AnyCancellable>()

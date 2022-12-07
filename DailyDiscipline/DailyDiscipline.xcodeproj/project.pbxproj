@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C84F100A2940AA3400778541 /* ToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84F10092940AA3400778541 /* ToolBarView.swift */; };
 		C86BAC3E293F78B7007E76DA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86BAC3D293F78B7007E76DA /* ProfileView.swift */; };
 		C86BAC40293F8004007E76DA /* UserLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86BAC3F293F8004007E76DA /* UserLevelViewModel.swift */; };
 		C86BAC42293F80DD007E76DA /* CoreDataManagerUserLevel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86BAC41293F80DD007E76DA /* CoreDataManagerUserLevel.swift */; };
@@ -25,11 +26,12 @@
 		C8FCDAB3293F60DB008AFFDB /* PickerFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FCDAB2293F60DB008AFFDB /* PickerFrequency.swift */; };
 		C8FCDAB5293F60EF008AFFDB /* CategoryToImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FCDAB4293F60EF008AFFDB /* CategoryToImage.swift */; };
 		C8FCDAB7293F6112008AFFDB /* CoreDataManagerTaskObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FCDAB6293F6112008AFFDB /* CoreDataManagerTaskObject.swift */; };
-		C8FCDAB9293F6144008AFFDB /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FCDAB8293F6144008AFFDB /* ViewModel.swift */; };
+		C8FCDAB9293F6144008AFFDB /* TaskObjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8FCDAB8293F6144008AFFDB /* TaskObjectViewModel.swift */; };
 		C8FCDABC293F6211008AFFDB /* CoreDataContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C8FCDABA293F6211008AFFDB /* CoreDataContainer.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C84F10092940AA3400778541 /* ToolBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarView.swift; sourceTree = "<group>"; };
 		C86BAC3D293F78B7007E76DA /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		C86BAC3F293F8004007E76DA /* UserLevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLevelViewModel.swift; sourceTree = "<group>"; };
 		C86BAC41293F80DD007E76DA /* CoreDataManagerUserLevel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerUserLevel.swift; sourceTree = "<group>"; };
@@ -49,7 +51,7 @@
 		C8FCDAB2293F60DB008AFFDB /* PickerFrequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerFrequency.swift; sourceTree = "<group>"; };
 		C8FCDAB4293F60EF008AFFDB /* CategoryToImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryToImage.swift; sourceTree = "<group>"; };
 		C8FCDAB6293F6112008AFFDB /* CoreDataManagerTaskObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerTaskObject.swift; sourceTree = "<group>"; };
-		C8FCDAB8293F6144008AFFDB /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		C8FCDAB8293F6144008AFFDB /* TaskObjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskObjectViewModel.swift; sourceTree = "<group>"; };
 		C8FCDABB293F6211008AFFDB /* CoreDataContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataContainer.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				C8FCDAB2293F60DB008AFFDB /* PickerFrequency.swift */,
+				C84F10092940AA3400778541 /* ToolBarView.swift */,
 			);
 			path = GlobalSubViews;
 			sourceTree = "<group>";
@@ -100,7 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				C8FCDAB4293F60EF008AFFDB /* CategoryToImage.swift */,
-				C8FCDAB8293F6144008AFFDB /* ViewModel.swift */,
+				C8FCDAB8293F6144008AFFDB /* TaskObjectViewModel.swift */,
 				C86BAC3F293F8004007E76DA /* UserLevelViewModel.swift */,
 				C86BAC3B293F73C9007E76DA /* CoreData */,
 			);
@@ -274,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C8FCDAB3293F60DB008AFFDB /* PickerFrequency.swift in Sources */,
+				C84F100A2940AA3400778541 /* ToolBarView.swift in Sources */,
 				C86BAC40293F8004007E76DA /* UserLevelViewModel.swift in Sources */,
 				C86BAC42293F80DD007E76DA /* CoreDataManagerUserLevel.swift in Sources */,
 				C86BAC4B293FA131007E76DA /* LevelBarView.swift in Sources */,
@@ -282,7 +286,7 @@
 				C86BAC46293F8577007E76DA /* DateView.swift in Sources */,
 				C86BAC3E293F78B7007E76DA /* ProfileView.swift in Sources */,
 				C8FCDAB1293F60C1008AFFDB /* NewTaskObjectView.swift in Sources */,
-				C8FCDAB9293F6144008AFFDB /* ViewModel.swift in Sources */,
+				C8FCDAB9293F6144008AFFDB /* TaskObjectViewModel.swift in Sources */,
 				C8FCDAB5293F60EF008AFFDB /* CategoryToImage.swift in Sources */,
 				C86BAC58293FAF4C007E76DA /* Test.swift in Sources */,
 				C8FCDAAF293F60A0008AFFDB /* Persistance.swift in Sources */,

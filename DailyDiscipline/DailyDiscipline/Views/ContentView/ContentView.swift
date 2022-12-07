@@ -13,9 +13,11 @@ struct ContentView: View {
     var userLevelManager = CoreDataManagerUserLevel.shared
     @State var taskObjectText: String = ""
     @State private var showNewTaskSheet = false
-    @StateObject var taskObjectViewModel = ViewModel()
+    @StateObject var taskObjectViewModel = TaskObjectViewModel()
     @StateObject var userLevelViewModel = CoreDataManagerUserLevel()
     @State var selectedPriority: FrequencyPicker = .daily
+    
+    @State var categoryToImage = CategoryToImage()
     
     init(){
             UISegmentedControl.appearance().selectedSegmentTintColor = .white
@@ -37,8 +39,8 @@ struct ContentView: View {
                 VStack{
                     DateView()
                     
-                    
                     PickerFrequency(selectedFrequency: $selectedPriority)
+                    
                     if taskObjectViewModel.dataArr.count != 0 {
                         List {
                             ForEach(taskObjectViewModel.dataArr) { task in
@@ -53,17 +55,10 @@ struct ContentView: View {
                                             Image(systemName: "circle")
                                         }
                                     }
-                                    VStack {
-                                        Text(task.name ?? "No name")
-                                        Text(task.frequency ?? "No frequency")
-                                        Text("Points: \(task.points)")
-                                        Text(task.category ?? "No category")
-                                        if task.isComplete {
-                                            Text("Complete")
-                                        } else {
-                                            Text("Not Complete")
-                                        }
-                                    }
+                                    Text(task.name ?? "No name")
+                                    Text(task.frequency ?? "No frequency")
+                                    Spacer()
+                                    Image(systemName:categoryToImage.getCategoryImage(category: task.category ?? ""))
                                 }
                             }
                             .onDelete(perform: taskObjectManager.deleteTaskObject)
@@ -87,24 +82,7 @@ struct ContentView: View {
                     NewTaskObjectView()
                 }
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    NavigationLink {
-                        ProfileView()
-                    } label: {
-                        Image(systemName: "person.fill")
-                    }
-                }
-                ToolbarItem {
-                    Button {
-                        
-                    } label: {
-                        Label("Settings", systemImage: "gearshape.fill")
-                    }
-                }
-            }
-            .navigationTitle("Daily Discipline")
-            .navigationBarTitleDisplayMode(.inline)
+            .toolBarViewTwoButtons(leftButton: "ProfileView", rightButton: "SettingsView")
             .foregroundColor(.black)
         }
     }

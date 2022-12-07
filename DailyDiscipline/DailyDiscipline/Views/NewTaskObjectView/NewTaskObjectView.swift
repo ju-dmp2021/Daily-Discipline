@@ -180,17 +180,7 @@ struct NewTaskObjectView: View {
                     .padding(.horizontal, 30)
                 }
                 .padding(.top)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
-                        Button {
-                            dismiss()
-                        } label: {
-                            Image(systemName: "chevron.left")
-                        }
-                    }
-                }
-                .navigationTitle("Daily Discipline")
-                .navigationBarTitleDisplayMode(.inline)
+                .toolBarViewOneButton(leftButton: "backButton")
                 .foregroundColor(.white)
                 .accentColor(.white)
             }
