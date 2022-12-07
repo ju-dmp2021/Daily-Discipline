@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		11EFD5842941101400B6DD55 /* APIDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EFD5832941101400B6DD55 /* APIDataModel.swift */; };
+		11EFD590294146C100B6DD55 /* DailyDiscipline_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EFD58F294146C100B6DD55 /* DailyDiscipline_Tests.swift */; };
 		C84F100A2940AA3400778541 /* ToolBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84F10092940AA3400778541 /* ToolBarView.swift */; };
 		C86BAC3E293F78B7007E76DA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86BAC3D293F78B7007E76DA /* ProfileView.swift */; };
 		C86BAC40293F8004007E76DA /* UserLevelViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86BAC3F293F8004007E76DA /* UserLevelViewModel.swift */; };
@@ -31,8 +32,20 @@
 		C8FCDABC293F6211008AFFDB /* CoreDataContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C8FCDABA293F6211008AFFDB /* CoreDataContainer.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		11EFD591294146C100B6DD55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C8A1DDD32927838B00FA983B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C8A1DDDA2927838B00FA983B;
+			remoteInfo = DailyDiscipline;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		11EFD5832941101400B6DD55 /* APIDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataModel.swift; sourceTree = "<group>"; };
+		11EFD58D294146C100B6DD55 /* DailyDiscipline_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DailyDiscipline_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11EFD58F294146C100B6DD55 /* DailyDiscipline_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDiscipline_Tests.swift; sourceTree = "<group>"; };
 		C84F10092940AA3400778541 /* ToolBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarView.swift; sourceTree = "<group>"; };
 		C86BAC3D293F78B7007E76DA /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		C86BAC3F293F8004007E76DA /* UserLevelViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLevelViewModel.swift; sourceTree = "<group>"; };
@@ -58,6 +71,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		11EFD58A294146C100B6DD55 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C8A1DDD82927838B00FA983B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -74,6 +94,14 @@
 				11EFD5832941101400B6DD55 /* APIDataModel.swift */,
 			);
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		11EFD58E294146C100B6DD55 /* DailyDiscipline_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				11EFD58F294146C100B6DD55 /* DailyDiscipline_Tests.swift */,
+			);
+			path = DailyDiscipline_Tests;
 			sourceTree = "<group>";
 		};
 		C86BAC39293F73B3007E76DA /* Views */ = {
@@ -184,6 +212,7 @@
 			children = (
 				C86BAC57293FAF4C007E76DA /* Test.swift */,
 				C8A1DDDD2927838B00FA983B /* DailyDiscipline */,
+				11EFD58E294146C100B6DD55 /* DailyDiscipline_Tests */,
 				C8A1DDDC2927838B00FA983B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -192,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				C8A1DDDB2927838B00FA983B /* DailyDiscipline.app */,
+				11EFD58D294146C100B6DD55 /* DailyDiscipline_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -220,6 +250,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		11EFD58C294146C100B6DD55 /* DailyDiscipline_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11EFD593294146C100B6DD55 /* Build configuration list for PBXNativeTarget "DailyDiscipline_Tests" */;
+			buildPhases = (
+				11EFD589294146C100B6DD55 /* Sources */,
+				11EFD58A294146C100B6DD55 /* Frameworks */,
+				11EFD58B294146C100B6DD55 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11EFD592294146C100B6DD55 /* PBXTargetDependency */,
+			);
+			name = DailyDiscipline_Tests;
+			productName = DailyDiscipline_Tests;
+			productReference = 11EFD58D294146C100B6DD55 /* DailyDiscipline_Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		C8A1DDDA2927838B00FA983B /* DailyDiscipline */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C8A1DDE92927838C00FA983B /* Build configuration list for PBXNativeTarget "DailyDiscipline" */;
@@ -247,6 +295,10 @@
 				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
+					11EFD58C294146C100B6DD55 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = C8A1DDDA2927838B00FA983B;
+					};
 					C8A1DDDA2927838B00FA983B = {
 						CreatedOnToolsVersion = 14.1;
 					};
@@ -266,11 +318,19 @@
 			projectRoot = "";
 			targets = (
 				C8A1DDDA2927838B00FA983B /* DailyDiscipline */,
+				11EFD58C294146C100B6DD55 /* DailyDiscipline_Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		11EFD58B294146C100B6DD55 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C8A1DDD92927838B00FA983B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -283,6 +343,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		11EFD589294146C100B6DD55 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11EFD590294146C100B6DD55 /* DailyDiscipline_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C8A1DDD72927838B00FA983B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -312,7 +380,49 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		11EFD592294146C100B6DD55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C8A1DDDA2927838B00FA983B /* DailyDiscipline */;
+			targetProxy = 11EFD591294146C100B6DD55 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		11EFD594294146C100B6DD55 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "DD.DailyDiscipline-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DailyDiscipline.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DailyDiscipline";
+			};
+			name = Debug;
+		};
+		11EFD595294146C100B6DD55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "DD.DailyDiscipline-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DailyDiscipline.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DailyDiscipline";
+			};
+			name = Release;
+		};
 		C8A1DDE72927838C00FA983B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -486,6 +596,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		11EFD593294146C100B6DD55 /* Build configuration list for PBXNativeTarget "DailyDiscipline_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11EFD594294146C100B6DD55 /* Debug */,
+				11EFD595294146C100B6DD55 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C8A1DDD62927838B00FA983B /* Build configuration list for PBXProject "DailyDiscipline" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
