@@ -56,7 +56,6 @@ struct ContentView: View {
             .foregroundColor(.black)
             .onChange(of: selectedPriority) { newValue in
                 if newDateModel.monthHasChanged() {
-                    print("Yes")
                     for task in taskObjectViewModel.monthlyArray{
                         task.isComplete = false
                         taskObjectManager.saveData()
@@ -69,7 +68,6 @@ struct ContentView: View {
                     }
                 }
                 if newDateModel.dayHasChanged() {
-                    print("Yes")
                     for task in taskObjectViewModel.dailyArray{
                         task.isComplete = false
                         taskObjectManager.saveData()

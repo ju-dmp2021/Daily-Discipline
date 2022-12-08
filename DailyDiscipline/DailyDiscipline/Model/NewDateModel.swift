@@ -15,10 +15,7 @@ class NewDateModel {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd"
         let dateInString = dateFormatter.string(from: date)
-        
-        print(dateInString)
         return dateInString
-        
     }
 
     func dayHasChanged() -> Bool {
@@ -27,10 +24,7 @@ class NewDateModel {
         dateFormatter.dateFormat = "dd"
         let dateInString = dateFormatter.string(from: date)
         
-        print(dateInString)
-        
         if dateInString != UserDefaults.standard.string(forKey: "day"){
-            print("New Day")
             return true
         }
         return false
@@ -43,7 +37,6 @@ class NewDateModel {
         let dateInString = dateFormatter.string(from: date)
         
         if dateInString != UserDefaults.standard.string(forKey: "week"){
-            print("New week")
             return true
         }
         return false
@@ -56,7 +49,6 @@ class NewDateModel {
         let dateInString = dateFormatter.string(from: date)
         
         if dateInString != UserDefaults.standard.string(forKey: "month"){
-            print("New Month")
             return true
         }
         return false

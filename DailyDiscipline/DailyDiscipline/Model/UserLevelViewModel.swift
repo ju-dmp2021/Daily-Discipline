@@ -16,7 +16,6 @@ class UserLevelViewModel: ObservableObject{
     
     init(){
         getUserLevelArray()
-        print(userLevelArray)
     }
     
     func getUserLevelArray(){
