@@ -33,7 +33,7 @@ struct TitleView: View {
                         }
                     }
                 }
-                .toolBarViewOneButton(leftButton: "backButton", bgColor: .black)
+                .toolBarView(leftButton: "backButton", bgColor: .black)
                 .foregroundColor(.white)
                 .accentColor(.white)
             }

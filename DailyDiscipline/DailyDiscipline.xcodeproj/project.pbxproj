@@ -16,6 +16,9 @@
 		C86BAC4D293FA2A0007E76DA /* ProfileButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86BAC4C293FA2A0007E76DA /* ProfileButtonsView.swift */; };
 		C86BAC4F293FA583007E76DA /* AchievementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86BAC4E293FA583007E76DA /* AchievementView.swift */; };
 		C86BAC51293FA623007E76DA /* TitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86BAC50293FA623007E76DA /* TitleView.swift */; };
+		C891DD522941F4DF001D26A2 /* ApiSubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C891DD512941F4DF001D26A2 /* ApiSubmitButton.swift */; };
+		C891DD542941F50A001D26A2 /* PresetSubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C891DD532941F50A001D26A2 /* PresetSubmitButton.swift */; };
+		C891DD562941F523001D26A2 /* RegularSubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C891DD552941F523001D26A2 /* RegularSubmitButton.swift */; };
 		C8A1DDDF2927838B00FA983B /* DailyDisciplineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A1DDDE2927838B00FA983B /* DailyDisciplineApp.swift */; };
 		C8A1DDE32927838C00FA983B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8A1DDE22927838C00FA983B /* Assets.xcassets */; };
 		C8A1DDE62927838C00FA983B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8A1DDE52927838C00FA983B /* Preview Assets.xcassets */; };
@@ -24,7 +27,6 @@
 		C8A7B617294119F9008016D6 /* TaskObjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A7B616294119F9008016D6 /* TaskObjectView.swift */; };
 		C8A7B61929411A3F008016D6 /* BackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A7B61829411A3F008016D6 /* BackgroundImageView.swift */; };
 		C8A7B61C29411ACF008016D6 /* StoredData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A7B61B29411ACF008016D6 /* StoredData.swift */; };
-		C8A7B61E29412599008016D6 /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A7B61D29412599008016D6 /* SubmitButton.swift */; };
 		C8A7B620294125BB008016D6 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A7B61F294125BB008016D6 /* TextFieldView.swift */; };
 		C8A7B622294125DF008016D6 /* ChoosePresetCategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A7B621294125DF008016D6 /* ChoosePresetCategoryButton.swift */; };
 		C8A7B624294125FB008016D6 /* PresetTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A7B623294125FB008016D6 /* PresetTasksView.swift */; };
@@ -54,6 +56,9 @@
 		C86BAC4C293FA2A0007E76DA /* ProfileButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButtonsView.swift; sourceTree = "<group>"; };
 		C86BAC4E293FA583007E76DA /* AchievementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AchievementView.swift; sourceTree = "<group>"; };
 		C86BAC50293FA623007E76DA /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
+		C891DD512941F4DF001D26A2 /* ApiSubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiSubmitButton.swift; sourceTree = "<group>"; };
+		C891DD532941F50A001D26A2 /* PresetSubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetSubmitButton.swift; sourceTree = "<group>"; };
+		C891DD552941F523001D26A2 /* RegularSubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularSubmitButton.swift; sourceTree = "<group>"; };
 		C8A1DDDB2927838B00FA983B /* DailyDiscipline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DailyDiscipline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8A1DDDE2927838B00FA983B /* DailyDisciplineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyDisciplineApp.swift; sourceTree = "<group>"; };
 		C8A1DDE22927838C00FA983B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,7 +68,6 @@
 		C8A7B616294119F9008016D6 /* TaskObjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskObjectView.swift; sourceTree = "<group>"; };
 		C8A7B61829411A3F008016D6 /* BackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageView.swift; sourceTree = "<group>"; };
 		C8A7B61B29411ACF008016D6 /* StoredData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredData.swift; sourceTree = "<group>"; };
-		C8A7B61D29412599008016D6 /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
 		C8A7B61F294125BB008016D6 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		C8A7B621294125DF008016D6 /* ChoosePresetCategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePresetCategoryButton.swift; sourceTree = "<group>"; };
 		C8A7B623294125FB008016D6 /* PresetTasksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetTasksView.swift; sourceTree = "<group>"; };
@@ -245,11 +249,13 @@
 		C8A7B61A29411AB3008016D6 /* NewTaskObjectSubViews */ = {
 			isa = PBXGroup;
 			children = (
-				C8A7B61D29412599008016D6 /* SubmitButton.swift */,
 				C8A7B621294125DF008016D6 /* ChoosePresetCategoryButton.swift */,
 				C8A7B61F294125BB008016D6 /* TextFieldView.swift */,
 				C8A7B62529412613008016D6 /* PresetCategoryView.swift */,
 				C8A7B623294125FB008016D6 /* PresetTasksView.swift */,
+				C891DD512941F4DF001D26A2 /* ApiSubmitButton.swift */,
+				C891DD532941F50A001D26A2 /* PresetSubmitButton.swift */,
+				C891DD552941F523001D26A2 /* RegularSubmitButton.swift */,
 			);
 			path = NewTaskObjectSubViews;
 			sourceTree = "<group>";
@@ -368,12 +374,15 @@
 				C8FCDAB1293F60C1008AFFDB /* NewTaskObjectView.swift in Sources */,
 				C8FCDAB9293F6144008AFFDB /* TaskObjectViewModel.swift in Sources */,
 				C8A7B61C29411ACF008016D6 /* StoredData.swift in Sources */,
+				C891DD522941F4DF001D26A2 /* ApiSubmitButton.swift in Sources */,
 				C8FCDAB5293F60EF008AFFDB /* CategoryToImage.swift in Sources */,
+				C891DD542941F50A001D26A2 /* PresetSubmitButton.swift in Sources */,
 				C8A7B62C29412F6B008016D6 /* TitleListView.swift in Sources */,
 				C8A7B620294125BB008016D6 /* TextFieldView.swift in Sources */,
 				C8A7B62F2941365E008016D6 /* ApiDataModel.swift in Sources */,
 				C8FCDAAF293F60A0008AFFDB /* Persistance.swift in Sources */,
 				C86BAC51293FA623007E76DA /* TitleView.swift in Sources */,
+				C891DD562941F523001D26A2 /* RegularSubmitButton.swift in Sources */,
 				C8A7B6132940EE7E008016D6 /* NewDateModel.swift in Sources */,
 				C8A7B62629412613008016D6 /* PresetCategoryView.swift in Sources */,
 				C86BAC4D293FA2A0007E76DA /* ProfileButtonsView.swift in Sources */,
@@ -382,7 +391,6 @@
 				C8FCDABC293F6211008AFFDB /* CoreDataContainer.xcdatamodeld in Sources */,
 				C8A1DDDF2927838B00FA983B /* DailyDisciplineApp.swift in Sources */,
 				C8A7B633294150A5008016D6 /* GetRandomTaskButton.swift in Sources */,
-				C8A7B61E29412599008016D6 /* SubmitButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

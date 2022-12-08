@@ -25,7 +25,7 @@ struct AchievementView: View {
             ZStack(alignment: .top){
                 BackgroundImageView(color: .black)
                 VStack{
-                    Text("Titles!")
+                    Text("Achievements!")
                         .foregroundColor(.white)
                         .font(.largeTitle)
                     ScrollView(.vertical) {
@@ -36,7 +36,7 @@ struct AchievementView: View {
                         }
                     }
                 }
-                .toolBarViewOneButton(leftButton: "backButton", bgColor: .black)
+                .toolBarView(leftButton: "backButton", bgColor: .black)
                 .foregroundColor(.white)
                 .accentColor(.white)
             }

@@ -52,7 +52,7 @@ struct ContentView: View {
                     NewTaskObjectView()
                 }
             }
-            .toolBarViewTwoButtons(leftButton: "ProfileView", rightButton: "SettingsView", bgColor: .white)
+            .toolBarView(leftButton: "ProfileView", bgColor: .white)
             .foregroundColor(.black)
             .onChange(of: selectedPriority) { newValue in
                 if newDateModel.monthHasChanged() {

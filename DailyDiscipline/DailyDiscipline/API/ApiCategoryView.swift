@@ -13,6 +13,7 @@ struct ApiCategoryView: View {
     @State var categoryToImage = CategoryToImage()
     @State var storedData = StoredData()
     @Binding var randomTaskText: String
+    @Binding var selectedApiCategory: String
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: true, content: {
@@ -20,6 +21,7 @@ struct ApiCategoryView: View {
                 ForEach(storedData.randomTaskCategories, id: \.self) { category in
                     Button {
                         apiDataModel.getTaskFromCategory(type: category)
+                        selectedApiCategory = category
                     } label: {
                         VStack{
                             Text(category)

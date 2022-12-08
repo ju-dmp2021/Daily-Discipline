@@ -23,8 +23,6 @@ struct NewTaskObjectView: View {
     @State var selectedPresetItem = "Go to the gym"
     @State var randomTaskText = "Choose a category"
     
-    @State var categoryToImage = CategoryToImage()
-    
     init(){
         UISegmentedControl.appearance().selectedSegmentTintColor = .white
         UISegmentedControl.appearance().setTitleTextAttributes([.foregroundColor : UIColor.black], for: .selected)
@@ -39,27 +37,37 @@ struct NewTaskObjectView: View {
                 BackgroundImageView(color: .black)
                 VStack(spacing: 20) {
                     PickerFrequency(selectedFrequency: $selectedPriority)
-                    if !showPresetTasksCategories && !showRandomTasksCategories {
-                        TextFieldView(taskObjectText: $taskObjectText, selectedCategory: $selectedCategory)
-                    }
-                    if showPresetTasksCategories {
-                        PresetCategoryView(showPresetTasks: $showPresetTasks, selectedPresetCategory: $selectedPresetCategory)
-                    }
-                    
-                    if showRandomTasksCategories {
-                        ApiCategoryView(randomTaskText: $randomTaskText)
-                    }
-                    
-                    if showPresetTasks {
-                        PresetTasksView(selectedPresetCategory: $selectedPresetCategory, selectedPresetItem: $selectedPresetItem)
+                    Group {
+                        if !showPresetTasksCategories && !showRandomTasksCategories {
+                            TextFieldView(taskObjectText: $taskObjectText, selectedCategory: $selectedCategory)
+                        }
+                        if showPresetTasksCategories {
+                            PresetCategoryView(showPresetTasks: $showPresetTasks, selectedPresetCategory: $selectedPresetCategory)
+                        }
+                        if showRandomTasksCategories {
+                            ApiCategoryView(randomTaskText: $randomTaskText, selectedApiCategory: $selectedApiCategory)
+                        }
+                        if showPresetTasks {
+                            PresetTasksView(selectedPresetCategory: $selectedPresetCategory, selectedPresetItem: $selectedPresetItem)
+                        }
                     }
                     Spacer()
                     ChoosePresetCategoryButton(showPresetTasks: $showPresetTasks, showPresetTasksCategories: $showPresetTasksCategories, showRandomTasksCategories: $showRandomTasksCategories)
+                    
                     GetRandomTaskButton(showPresetTasksCategories: $showPresetTasksCategories, showRandomTasksCategories: $showRandomTasksCategories, showPresetTasks: $showPresetTasks)
-                    SubmitButton(showPresetTasks: $showPresetTasks, showPresetTasksCategories: $showPresetTasksCategories, selectedPriority: $selectedPriority, selectedCategory: $selectedCategory, selectedPresetItem: $selectedPresetItem, selectedPresetCategory: $selectedPresetCategory, taskObjectText: $taskObjectText, showRandomTasksCategories: $showRandomTasksCategories, randomTaskText: $randomTaskText, selectedApiCategory: $selectedApiCategory)
+                    
+                    if !showPresetTasksCategories && !showRandomTasksCategories {
+                        RegularSubmitButton(taskObjectText: $taskObjectText, showPresetTasksCategories: $showPresetTasksCategories, showRandomTasksCategories: $showRandomTasksCategories, selectedPriority: $selectedPriority, selectedCategory: $selectedCategory)
+                    }
+                    if showPresetTasksCategories {
+                        PresetSubmitButton(selectedPriority: $selectedPriority, selectedPresetItem: $selectedPresetItem, selectedPresetCategory: $selectedPresetCategory)
+                    }
+                    if showRandomTasksCategories {
+                        ApiSubmitButton(selectedApiCategory: $selectedApiCategory, randomTaskText: $randomTaskText, selectedPriority: $selectedPriority)
+                    }
                 }
                 .padding(.top)
-                .toolBarViewOneButton(leftButton: "backButton", bgColor: .black)
+                .toolBarView(leftButton: "backButton", bgColor: .black)
                 .foregroundColor(.white)
                 .accentColor(.white)
             }

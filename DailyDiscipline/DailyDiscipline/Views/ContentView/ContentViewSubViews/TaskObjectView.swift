@@ -17,7 +17,7 @@ struct TaskObjectView: View {
     var body: some View {
         HStack {
             Button {
-                taskObject.isComplete.toggle()
+                taskObject.isComplete = true
                 userLevelViewModel.addUserExperience(points: taskObject.points)
             } label: {
                 if taskObject.isComplete == true {

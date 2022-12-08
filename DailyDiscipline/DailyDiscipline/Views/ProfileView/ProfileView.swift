@@ -36,7 +36,7 @@ struct ProfileView: View {
                         .padding(.top, 60)
                 }
                 .foregroundColor(.black)
-                .toolBarViewOneButton(leftButton: "backButton", bgColor: .white)
+                .toolBarView(leftButton: "backButton", bgColor: .white)
                 .foregroundColor(.white)
                 .accentColor(.white)
                 .sheet(isPresented: $showAchievementView) {

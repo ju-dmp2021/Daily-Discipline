@@ -10,7 +10,6 @@ import SwiftUI
 struct ToolBarView: ViewModifier {
     
     var leftButton: String = ""
-    var rightButton: String = ""
     var bgColor: Color = .white
     @Environment(\.dismiss) private var dismiss
     
@@ -32,15 +31,6 @@ struct ToolBarView: ViewModifier {
                         }
                     }
                 }
-                ToolbarItem {
-                    if rightButton == "SettingsView" {
-                        Button {
-                            
-                        } label: {
-                            Label("Settings", systemImage: "gearshape.fill")
-                        }
-                    }
-                }
             }
             .foregroundColor(bgColor == .white ? .black : .white)
             .navigationBarBackButtonHidden(true)
@@ -50,11 +40,7 @@ struct ToolBarView: ViewModifier {
 }
 
 extension View {
-    func toolBarViewOneButton(leftButton: String, bgColor: Color) -> some View {
+    func toolBarView(leftButton: String, bgColor: Color) -> some View {
         modifier(ToolBarView(leftButton: leftButton, bgColor: bgColor))
-    }
-    
-    func toolBarViewTwoButtons(leftButton: String, rightButton: String, bgColor: Color) -> some View {
-        modifier(ToolBarView(leftButton: leftButton, rightButton: rightButton, bgColor: bgColor))
     }
 }
